@@ -1,0 +1,241 @@
+<!doctype html>
+<html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>СтройКонтроль — документы объекта</title>
+<style>
+:root{--purple:#5528a7;--purple2:#7445c6;--bg:#f4f5f9;--ink:#202334;--muted:#6b7084;--line:#e5e7ef;--green:#17845b;--orange:#b86a09;--red:#bd3946;--white:#fff}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font:15px/1.45 -apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;background:var(--bg);color:var(--ink);-webkit-font-smoothing:antialiased}button,input,select,textarea{font:inherit;color:inherit}button{cursor:pointer}:focus-visible{outline:3px solid #b9a2ee;outline-offset:2px;border-radius:8px}.app{min-height:100vh;display:grid;grid-template-columns:238px 1fr}.side{background:#24134a;color:white;padding:24px 16px;position:sticky;top:0;height:100vh;overflow:auto;align-self:start}.brand{display:flex;align-items:center;gap:11px;padding:0 8px 28px}.logo{width:40px;height:40px;border-radius:12px;background:linear-gradient(135deg,#a98aef,#6a3bc0);display:grid;place-items:center;font-weight:800;font-size:18px}.brand b{display:block;font-size:16px}.brand small{color:#c8bce4}.navlabel{font-size:11px;color:#b4a6d5;text-transform:uppercase;letter-spacing:1px;padding:12px 12px 7px}.nav{display:flex;gap:11px;align-items:center;padding:12px;border-radius:10px;color:#e6def5;margin:3px 0;cursor:pointer;user-select:none;width:100%;border:0;background:none;text-align:left;transition:background .15s}.nav:hover{background:#3a2370}.nav.active{background:#5736a1;color:#fff}.nav span{width:19px;text-align:center}.nav em{margin-left:auto;font-style:normal;background:#d88a24;color:#fff;border-radius:10px;font-size:11px;padding:1px 7px;font-weight:700}.main{min-width:0}.top{height:76px;background:#fff;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;padding:0 32px}.crumb{font-size:13px;color:var(--muted)}.user{display:flex;gap:10px;align-items:center;font-size:13px}.avatar{height:35px;width:35px;background:#e9e0fb;color:var(--purple);border-radius:50%;display:grid;place-items:center;font-weight:700}.content{padding:30px 32px;max-width:1500px;margin:auto}.tabs{display:none;gap:8px;overflow:auto;margin-bottom:16px;padding-bottom:2px}.tab{white-space:nowrap;padding:9px 13px;border-radius:20px;background:#fff;border:1px solid var(--line);font-size:13px;font-weight:650}.tab.active{background:var(--purple);color:#fff;border-color:var(--purple)}.heading{display:flex;justify-content:space-between;align-items:flex-start;gap:18px;margin-bottom:23px}.heading h1{font-size:27px;margin:0 0 6px}.heading p{color:var(--muted);margin:0;max-width:720px}.btn{border:0;border-radius:9px;padding:11px 15px;font-weight:650;transition:background .15s}.primary{background:var(--purple);color:#fff}.primary:hover{background:#432083}.secondary{background:#f0eafb;color:var(--purple)}.secondary:hover{background:#e6dcf8}.danger{background:#fde8eb;color:var(--red)}.danger:hover{background:#fbd5da}.stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:15px;margin-bottom:22px}.stat{background:#fff;border:1px solid var(--line);border-radius:14px;padding:18px;text-align:left;display:block;width:100%;transition:border-color .15s,box-shadow .15s}.stat:hover{border-color:#b8a4e5;box-shadow:0 4px 16px #5528a712}.stat-top{display:flex;justify-content:space-between;align-items:center;color:var(--muted);font-size:13px}.stat-icon{width:35px;height:35px;border-radius:10px;display:grid;place-items:center;background:#f0eafb;color:var(--purple);font-size:17px}.stat strong{display:block;font-size:29px;margin-top:10px;font-variant-numeric:tabular-nums}.stat small{color:var(--muted)}.panel{background:#fff;border:1px solid var(--line);border-radius:14px;overflow:hidden;margin-bottom:17px}.panel-head{padding:19px 20px;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;gap:12px}.panel-head h2{font-size:17px;margin:0}.filters{display:flex;gap:9px;flex-wrap:wrap}.filters input,.filters select{border:1px solid var(--line);border-radius:8px;padding:9px 11px;background:white}.filters input{width:220px}.tablewrap{overflow:auto}table{border-collapse:collapse;width:100%;min-width:900px}th{text-align:left;background:#fafaff;color:#74788b;font-size:11px;text-transform:uppercase;letter-spacing:.45px;padding:13px 17px;font-weight:700}td{padding:15px 17px;border-top:1px solid #eef0f5;vertical-align:middle}tbody tr:hover{background:#fcfbff}.material{font-weight:700}.sub{font-size:12px;color:var(--muted);margin-top:3px}.pill{display:inline-flex;align-items:center;gap:6px;border-radius:20px;padding:6px 9px;font-size:12px;font-weight:700;white-space:nowrap}.pill:before{content:"";width:6px;height:6px;border-radius:50%;background:currentColor}.ok{background:#e4f6ee;color:var(--green)}.warn{background:#fff1dc;color:var(--orange)}.bad{background:#fde8eb;color:var(--red)}.review{background:#ecebff;color:#5d51b8}.none{background:#eceef3;color:#6a6f82}.mini{border:1px solid var(--line);background:white;border-radius:7px;padding:7px 9px;color:#555a6b}.mini:hover{border-color:#b8a4e5;color:var(--purple)}.mini.dng:hover{border-color:#e9aab2;color:var(--red)}.chip{display:inline-block;background:#f0eafb;color:var(--purple);border-radius:6px;padding:3px 8px;font-size:12px;font-weight:650}.bottom{display:grid;grid-template-columns:1.2fr .8fr;gap:16px}.smallpanel{background:#fff;border:1px solid var(--line);border-radius:14px;padding:19px}.smallpanel h3{font-size:16px;margin:0 0 14px}.alert{display:flex;gap:11px;padding:12px 0;border-top:1px solid #eef0f5}.alert-icon{width:31px;height:31px;display:grid;place-items:center;border-radius:9px;background:#fff1dc;color:var(--orange);flex-shrink:0}.alert-icon.bad{background:#fde8eb;color:var(--red)}.alert b{font-size:13px}.alert p{margin:3px 0 0;color:var(--muted);font-size:12px}.progressrow{display:flex;justify-content:space-between;font-size:13px;margin:14px 0 7px}.bar{height:8px;border-radius:10px;background:#eeeaf6;overflow:hidden}.bar i{display:block;height:100%;background:var(--purple);border-radius:10px;transition:width .3s}.footer-note{color:#7d8296;font-size:11px;margin-top:20px}.empty{padding:30px;text-align:center;color:var(--muted)}.modalback{display:none;position:fixed;inset:0;background:#19112f77;align-items:center;justify-content:center;padding:18px;z-index:10}.modalback.show{display:flex}.modal{background:#fff;border-radius:16px;width:min(680px,100%);max-height:92vh;overflow:auto;padding:24px;box-shadow:0 20px 70px #1d143844}.modal h2{margin:0 0 5px}.modal>p{color:var(--muted);font-size:13px;margin:0 0 18px}.formgrid{display:grid;grid-template-columns:1fr 1fr;gap:13px}.field{display:flex;flex-direction:column;gap:6px}.field.full{grid-column:1/-1}.field label{font-size:12px;color:#62677a;font-weight:700}.field input,.field select,.field textarea{padding:10px;border:1px solid var(--line);border-radius:8px;min-width:0;background:#fff}.modal-actions{display:flex;justify-content:flex-end;gap:9px;margin-top:22px;flex-wrap:wrap}.doclist{display:grid;gap:9px;margin:15px 0}.docitem{display:flex;align-items:flex-start;gap:10px;padding:12px;border:1px solid var(--line);border-radius:10px}.docitem input{margin-top:4px;accent-color:var(--purple)}.docitem b{font-size:13px;display:block}.docitem small{color:var(--muted)}.rulebox{background:#f8f6fd;border:1px solid #e9e0fb;border-radius:10px;padding:12px;margin:12px 0;font-size:13px}.rulebox strong{color:var(--purple)}.toast{position:fixed;right:20px;bottom:20px;background:#211345;color:white;padding:13px 17px;border-radius:10px;box-shadow:0 8px 28px #0002;display:none;z-index:20;max-width:calc(100vw - 40px)}.toast.show{display:block}.top-actions{display:flex;gap:8px;align-items:center;flex-wrap:wrap}.view{display:none}.view.active{display:block}
+.stagegrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:15px;margin-bottom:17px}.stagecard{background:#fff;border:1px solid var(--line);border-radius:14px;padding:18px;border-top:4px solid #cfc5ea}.stagecard.ok{border-top-color:var(--green)}.stagecard.warn{border-top-color:#d88a24}.stagecard.bad{border-top-color:var(--red)}.stagecard h3{margin:0 0 3px;font-size:16px}.stagecard .row{display:flex;justify-content:space-between;align-items:center;gap:8px;margin:10px 0;flex-wrap:wrap}.stagecard .msg{font-size:12.5px;color:#4b5064;margin:10px 0}.matlist{border-top:1px solid #eef0f5;margin-top:12px;padding-top:8px}.matitem{display:flex;justify-content:space-between;align-items:center;gap:8px;padding:6px 0;font-size:13px;cursor:pointer;width:100%;background:none;border:0;text-align:left}.matitem:hover b{color:var(--purple)}.dot{width:9px;height:9px;border-radius:50%;display:inline-block;margin-right:7px}.dot.ok{background:var(--green)}.dot.warn{background:#d88a24}.dot.bad{background:var(--red)}.dot.review{background:#7b6fd0}.datefield{display:flex;align-items:center;gap:8px;font-size:12px;color:var(--muted);margin-top:10px;flex-wrap:wrap}.datefield input{border:1px solid var(--line);border-radius:7px;padding:6px 8px}.datefield .mini{margin-left:auto}.reqbox{width:100%;min-height:150px;font-size:13px;margin-top:8px;border:1px solid var(--line);border-radius:8px;padding:10px}.hint{font-size:12px;color:var(--muted);margin-top:12px}.docmain{display:block;min-width:0;flex:1}.file-attach{display:inline-flex;align-items:center;gap:6px;color:var(--purple);font-size:12px;font-weight:650;cursor:pointer;margin-top:8px}.file-attach input{position:absolute;width:1px;height:1px;opacity:0;pointer-events:none}.attachment-list{display:grid;gap:6px;margin-top:8px}.attachment-row{display:flex;align-items:center;gap:7px;flex-wrap:wrap;background:#fafaff;border:1px solid #ebe8f5;border-radius:7px;padding:6px 8px;font-size:12px}.attachment-name{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:260px}.attachment-actions{display:flex;gap:5px;margin-left:auto}.attachment-actions button{font-size:11px;padding:4px 6px}.file-hint{display:block;color:var(--muted);font-size:11px;margin-top:5px}
+@media(max-width:950px){.app{grid-template-columns:1fr}.side{display:none}.tabs{display:flex}.content{padding:22px 16px}.top{padding:0 17px}.stats{grid-template-columns:repeat(2,minmax(0,1fr))}.bottom{grid-template-columns:1fr}.heading h1{font-size:23px}}@media(max-width:520px){.stats{gap:8px}.stat{padding:13px}.stat strong{font-size:24px}.heading{flex-direction:column}.filters input{width:100%}.filters{width:100%}.filters select{flex:1}.formgrid{grid-template-columns:1fr}.field.full{grid-column:auto}.panel-head{align-items:flex-start;flex-direction:column}.modal-actions .btn{flex:1}}
+@media print{.side,.top,.tabs,.top-actions,.toast,.mini,.modalback,.footer-note{display:none!important}.app{display:block}body{background:#fff}.content{padding:0}.panel,.smallpanel{border:1px solid #ccc}}
+</style></head><body><div class="app"><aside class="side"><div class="brand"><div class="logo">СК</div><div><b>СтройКонтроль</b><small>Документы объекта</small></div></div><div class="navlabel">Рабочее пространство</div><nav aria-label="Разделы"><button class="nav active" data-view="overview"><span>▦</span> Обзор</button><button class="nav" data-view="stages"><span>◈</span> Этапы работ <em id="navStageBadge" style="display:none"></em></button><button class="nav" data-view="deliveries"><span>▤</span> Поставки и материалы</button><button class="nav" data-view="report"><span>▥</span> Отчёт</button></nav></aside>
+<main class="main"><header class="top"><div><div class="crumb" id="crumb">Объект / Мостовое сооружение / Обзор</div></div><div class="user"><div class="avatar">ИП</div><div><b>Инженер ПТО</b><div class="sub">Демонстрационный режим</div></div></div></header><div class="content">
+<div class="tabs" role="tablist"><button class="tab active" data-view="overview">Обзор</button><button class="tab" data-view="stages">Этапы работ</button><button class="tab" data-view="deliveries">Поставки</button><button class="tab" data-view="report">Отчёт</button></div>
+
+<!-- ОБЗОР -->
+<div class="view active" id="view-overview"><div class="heading"><div><h1>Обзор документации</h1><p>Готовность паспортов и документов по поставкам относительно графика этапов работ</p></div><div class="top-actions"><button class="btn secondary" data-reset>Сбросить пример</button><button class="btn primary" data-add>＋ Добавить поставку</button></div></div>
+<div class="stats"><button class="stat" data-stat="all"><div class="stat-top">Всего поставок <span class="stat-icon">▤</span></div><strong id="total">—</strong><small>Открыть весь реестр</small></button><button class="stat" data-stat="ok"><div class="stat-top">Комплект готов <span class="stat-icon">✓</span></div><strong id="ready">—</strong><small>Все документы получены и проверены</small></button><button class="stat" data-stat="bad"><div class="stat-top">Есть несоответствия <span class="stat-icon">!</span></div><strong id="issues">—</strong><small>Нужна сверка партии</small></button><button class="stat" data-stat="warn"><div class="stat-top">Не хватает документов <span class="stat-icon">◷</span></div><strong id="missing">—</strong><small>Комплект ещё не собран</small></button></div>
+<div class="panel"><div class="panel-head"><h2>Ближайшие этапы работ</h2><button class="mini" data-goto="stages">Все этапы →</button></div><div style="padding:16px"><div class="stagegrid" id="stageStrip" style="margin:0"></div></div></div>
+<div class="bottom"><section class="smallpanel"><h3>Требуют внимания (по срочности этапа)</h3><div id="alerts"></div></section><section class="smallpanel"><h3>Готовность документации</h3><div class="progressrow"><span>Полностью проверенные комплекты</span><b id="percent">0%</b></div><div class="bar"><i id="progress" style="width:0%"></i></div><div class="progressrow"><span>Поставки с проблемами</span><b id="issuePercent">0%</b></div><div class="bar"><i id="issueProgress" style="width:0%;background:#d88a24"></i></div><div class="progressrow"><span>Этапы с допуском к работам</span><b id="stagePercent">0%</b></div><div class="bar"><i id="stageProgress" style="width:0%;background:#17845b"></i></div><div class="rulebox"><strong>Как работает проверка</strong><br>Статус поставки считается по обязательным документам, отметкам о проверке и сверке партии. Допуск этапа — по статусам всех привязанных поставок и времени до начала работ. Это вспомогательный контроль, а не юридическое заключение.</div></section></div></div>
+
+<!-- ЭТАПЫ -->
+<div class="view" id="view-stages"><div class="heading"><div><h1>Этапы работ</h1><p>К каждому этапу привязаны материалы. Пока комплект документов не закрыт, этап не допускается к началу работ. Когда комплект закрыт — можно готовить исполнительную документацию.</p></div><div class="top-actions"><button class="btn secondary" data-add-stage>＋ Добавить этап</button><button class="btn primary" data-add>＋ Добавить поставку</button></div></div><div class="stagegrid" id="stageList"></div></div>
+
+<!-- ПОСТАВКИ -->
+<div class="view" id="view-deliveries"><div class="heading"><div><h1>Поставки и материалы</h1><p>Реестр поставок с привязкой к этапам работ и ответственным</p></div><div class="top-actions"><button class="btn primary" data-add>＋ Добавить поставку</button></div></div>
+<section class="panel"><div class="panel-head"><h2>Реестр</h2><div class="filters"><input id="search" type="search" placeholder="Поиск материала, партии…" aria-label="Поиск"><select id="stageFilter" aria-label="Фильтр по этапу"></select><select id="statusFilter" aria-label="Фильтр по статусу"><option value="all">Все статусы</option><option value="ok">Комплект готов</option><option value="warn">Не хватает документов</option><option value="bad">Есть несоответствие</option><option value="review">На проверке</option></select></div></div><div class="tablewrap"><table><thead><tr><th>Материал / партия</th><th>Этап работ</th><th>Поставщик</th><th>Дата</th><th>Ответственный</th><th>Документы</th><th>Статус</th><th>Действие</th></tr></thead><tbody id="rows"></tbody></table></div></section></div>
+
+<!-- ОТЧЁТ -->
+<div class="view" id="view-report"><div class="heading"><div><h1>Отчёт о готовности документации</h1><p id="reportDate"></p></div><div class="top-actions"><button class="btn secondary" id="csvBtn">Скачать CSV</button><button class="btn primary" id="printBtn">Печать / PDF</button></div></div>
+<section class="panel"><div class="panel-head"><h2>Готовность по этапам</h2></div><div class="tablewrap"><table style="min-width:760px"><thead><tr><th>Этап</th><th>Начало работ</th><th>До начала</th><th>Поставок</th><th>Закрыто</th><th>Допуск</th></tr></thead><tbody id="reportStages"></tbody></table></div></section>
+<section class="panel"><div class="panel-head"><h2>Открытые вопросы по документам</h2></div><div class="tablewrap"><table style="min-width:760px"><thead><tr><th>Материал / партия</th><th>Этап</th><th>Что не закрыто</th><th>Ответственный</th></tr></thead><tbody id="reportOpen"></tbody></table></div></section></div>
+
+<div class="footer-note">Учебный прототип · Не является действующей системой АО «Мостоотряд-7». Данные демонстрационные, сохранение выполняется локально в этом браузере.</div></div></main></div>
+
+<!-- ДОБАВИТЬ ПОСТАВКУ -->
+<div class="modalback" id="addModal" role="dialog" aria-modal="true" aria-labelledby="addTitle"><div class="modal"><h2 id="addTitle">Добавить поставку</h2><p>Укажи этап работ — система сформирует список документов и будет отслеживать срок до начала этапа.</p><form id="addForm"><div class="formgrid"><div class="field"><label for="material">Материал *</label><input id="material" required placeholder="Например, бетон М300"></div><div class="field"><label for="type">Тип материала *</label><select id="type"><option value="concrete">Бетон / раствор</option><option value="metal">Арматура / металл</option><option value="bulk">Щебень / песок</option><option value="other">Другой материал</option></select></div><div class="field"><label for="stage">Этап работ *</label><select id="stage" required></select></div><div class="field"><label for="owner">Ответственный за документы</label><select id="owner"><option>Снабжение</option><option>ПТО</option><option>Лаборатория</option><option>Прораб</option></select></div><div class="field"><label for="batch">Номер партии *</label><input id="batch" required placeholder="Например, Б-104"></div><div class="field"><label for="supplier">Поставщик *</label><input id="supplier" required placeholder="Название компании"></div><div class="field full"><label for="date">Дата поставки *</label><input id="date" type="date" required></div></div><div class="modal-actions"><button type="button" class="btn secondary" data-close="addModal">Отмена</button><button class="btn primary" type="submit">Добавить поставку</button></div></form></div></div>
+
+<!-- ДОБАВИТЬ ЭТАП -->
+<div class="modalback" id="stageModal" role="dialog" aria-modal="true" aria-labelledby="stageTitle"><div class="modal"><h2 id="stageTitle">Добавить этап работ</h2><p>Этап — это часть графика, к которой привязываются материалы и документы.</p><form id="stageForm"><div class="formgrid"><div class="field full"><label for="stName">Название этапа *</label><input id="stName" required placeholder="Например, Устройство деформационных швов"></div><div class="field full"><label for="stWork">Состав работ</label><input id="stWork" placeholder="Кратко: какие работы входят"></div><div class="field full"><label for="stStart">Плановое начало работ *</label><input id="stStart" type="date" required></div></div><div class="modal-actions"><button type="button" class="btn secondary" data-close="stageModal">Отмена</button><button class="btn primary" type="submit">Добавить этап</button></div></form></div></div>
+
+<!-- КАРТОЧКА -->
+<div class="modalback" id="detailModal" role="dialog" aria-modal="true" aria-labelledby="detailTitle"><div class="modal"><h2 id="detailTitle">Карточка поставки</h2><p id="detailSubtitle"></p><div id="detailBody"></div><div id="reqArea"></div><div class="modal-actions"><button class="btn danger" id="delBtn" style="margin-right:auto">Удалить поставку</button><button class="btn secondary" id="reqBtn">Запрос поставщику</button><button class="btn secondary" data-close="detailModal">Закрыть</button><button class="btn primary" id="saveDetail">Сохранить проверку</button></div></div></div><div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script>
+const KEY='stroykontrol_v3_data';
+const ATTACH_DB='stroykontrol_attachments_v1';
+const TODAY=new Date();TODAY.setHours(0,0,0,0);
+const iso=d=>`${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`;
+const addDays=n=>{const d=new Date(TODAY);d.setDate(d.getDate()+n);return iso(d)};
+const daysTo=s=>Math.round((new Date(s+'T00:00:00')-TODAY)/864e5);
+const fmt=s=>s?s.split('-').reverse().join('.'):'не указана';
+const esc=s=>String(s==null?'':s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const $=id=>document.getElementById(id);
+
+const docTemplates={concrete:['Паспорт качества / документ о качестве','Документ о соответствии (если требуется)','Накладная или документ поставки'],metal:['Паспорт качества на металл','Документ о соответствии (если требуется)','Накладная или документ поставки'],bulk:['Паспорт / документ о качестве материала','Результаты испытаний (если предусмотрены)','Накладная или документ поставки'],other:['Паспорт / документ о качестве материала','Документ о соответствии (если требуется)','Накладная или документ поставки']};
+const labels={ok:'Комплект готов',warn:'Не хватает документов',bad:'Есть несоответствие',review:'На проверке'};
+const viewNames={overview:'Обзор',stages:'Этапы работ',deliveries:'Поставки и материалы',report:'Отчёт'};
+
+function makeSeed(){
+ const stages=[
+  {id:'s1',name:'Фундаменты опор',work:'Буронабивные сваи, ростверки',start:addDays(-8)},
+  {id:'s2',name:'Тело опор',work:'Армирование и бетонирование опор',start:addDays(3)},
+  {id:'s3',name:'Пролётное строение',work:'Монтаж металлоконструкций',start:addDays(14)},
+  {id:'s4',name:'Гидроизоляция и водоотвод',work:'Гидроизоляция, укладка водоотвода',start:addDays(24)},
+  {id:'s5',name:'Дорожная одежда',work:'Основание и покрытие проезжей части',start:addDays(40)}];
+ const T=(m,type,b,s,off,st,own,docs,chk,bm)=>({material:m,type,batch:b,supplier:s,date:addDays(off),stage:st,owner:own,docs,checked:chk,batchMatch:bm,note:'',attachments:[]});
+ const items=[
+  T('Бетон М300','concrete','Б-104','БетонСнаб',0,'s2','Лаборатория',[true,true,true],[true,true,true],true),
+  T('Арматура А500С','metal','А-238','МеталлТрейд',0,'s2','Снабжение',[true,false,true],[true,false,true],true),
+  T('Щебень фр. 20–40','bulk','Щ-319','Карьер-Сервис',-1,'s5','ПТО',[true,true,true],[true,true,true],false),
+  T('Гидроизоляция','other','Г-071','СтройКомплект',-2,'s4','Снабжение',[true,false,false],[true,false,false],true),
+  T('Металлоконструкции','metal','МК-052','МостМеталл',-3,'s3','ПТО',[true,true,true],[true,false,true],true),
+  T('Бетон М400','concrete','Б-103','БетонСнаб',-4,'s1','Лаборатория',[true,true,true],[true,true,true],true),
+  T('Песок строительный','bulk','П-091','Карьер-Сервис',-5,'s5','ПТО',[true,true,true],[true,true,true],true),
+  T('Опорные детали','metal','ОД-022','МостМеталл',-6,'s3','ПТО',[true,true,true],[true,true,true],true),
+  T('Раствор кладочный','concrete','Р-017','СтройСмесь',-7,'s2','Лаборатория',[true,true,true],[true,true,true],true),
+  T('Грунтовка','other','ГР-014','СтройКомплект',-8,'s4','Снабжение',[true,true,true],[true,true,true],true),
+  T('Болты высокопрочные','metal','БВ-006','МеталлТрейд',-9,'s3','Снабжение',[true,true,true],[true,true,true],true),
+  T('Трубы водоотводные','other','ТВ-031','ДорКомплект',-10,'s4','Прораб',[true,true,true],[true,true,true],false)];
+ return {stages,items};
+}
+let db=load();let activeBatch=null;
+function load(){try{const x=JSON.parse(localStorage.getItem(KEY)||'null');if(x&&Array.isArray(x.stages)&&Array.isArray(x.items))return x}catch(e){}return makeSeed()}
+function persist(){try{localStorage.setItem(KEY,JSON.stringify(db))}catch(e){toast('Браузер не разрешил сохранить данные.')}}
+
+function attachmentDb(){return new Promise((resolve,reject)=>{if(!window.indexedDB){reject(new Error('IndexedDB недоступна'));return}const req=indexedDB.open(ATTACH_DB,1);req.onupgradeneeded=()=>req.result.createObjectStore('files',{keyPath:'id'});req.onsuccess=()=>resolve(req.result);req.onerror=()=>reject(req.error||new Error('Не удалось открыть хранилище файлов'))})}
+function attachmentPut(record){return attachmentDb().then(dbx=>new Promise((resolve,reject)=>{const tx=dbx.transaction('files','readwrite');tx.objectStore('files').put(record);tx.oncomplete=()=>{dbx.close();resolve()};tx.onerror=()=>{dbx.close();reject(tx.error||new Error('Не удалось сохранить файл'))}}))}
+function attachmentGet(id){return attachmentDb().then(dbx=>new Promise((resolve,reject)=>{const tx=dbx.transaction('files','readonly');const req=tx.objectStore('files').get(id);req.onsuccess=()=>{dbx.close();resolve(req.result)};req.onerror=()=>{dbx.close();reject(req.error||new Error('Не удалось прочитать файл'))}}))}
+function attachmentDelete(id){return attachmentDb().then(dbx=>new Promise((resolve,reject)=>{const tx=dbx.transaction('files','readwrite');tx.objectStore('files').delete(id);tx.oncomplete=()=>{dbx.close();resolve()};tx.onerror=()=>{dbx.close();reject(tx.error||new Error('Не удалось удалить файл'))}}))}
+function formatBytes(n){if(n<1024)return n+' Б';if(n<1048576)return (n/1024).toFixed(1)+' КБ';if(n<1073741824)return (n/1048576).toFixed(1)+' МБ';return (n/1073741824).toFixed(1)+' ГБ'}
+function attachmentMeta(d,i){return (d.attachments||[]).filter(a=>a.docIndex===i)}
+function renderAttachments(d,i){const box=$('detailBody').querySelector(`[data-attachments="${i}"]`);if(!box)return;const list=attachmentMeta(d,i);box.innerHTML=list.length?list.map(a=>`<div class="attachment-row"><span aria-hidden="true">📎</span><span class="attachment-name" title="${esc(a.name)}">${esc(a.name)}</span><small class="sub">${formatBytes(a.size)}</small><span class="attachment-actions"><button type="button" class="mini" data-open-attachment="${esc(a.id)}">Открыть</button><button type="button" class="mini dng" data-delete-attachment="${esc(a.id)}">Удалить</button></span></div>`).join(''):'<span class="file-hint">Файлы ещё не прикреплены</span>'}
+async function handleFileSelection(input,i,d){const files=[...input.files||[]];if(!files.length)return;input.value='';try{for(const file of files){const id=crypto.randomUUID?crypto.randomUUID():'f'+Date.now().toString(36)+Math.random().toString(36).slice(2);await attachmentPut({id,batch:d.batch,docIndex:i,name:file.name,type:file.type,size:file.size,addedAt:Date.now(),blob:file});d.attachments=d.attachments||[];d.attachments.push({id,docIndex:i,name:file.name,type:file.type,size:file.size,addedAt:Date.now()})}d.docs[i]=true;persist();const doc=$('detailBody').querySelector(`input[data-doc="${i}"]`);if(doc){doc.checked=true;const chk=$('detailBody').querySelector(`input[data-checked="${i}"]`);if(chk)chk.disabled=false;doc.closest('.docitem').querySelector('small').textContent=chk&&chk.checked?'Получен · проверен':'Получен · ожидает проверки'}renderAttachments(d,i);render();toast(files.length===1?'Файл прикреплён к документу.':'Файлы прикреплены к документу.')}catch(e){toast('Не удалось сохранить файл в хранилище браузера.')}}
+async function openAttachment(id){try{const record=await attachmentGet(id);if(!record){toast('Файл не найден.');return}const url=URL.createObjectURL(record.blob);const win=window.open(url,'_blank');if(!win){const a=document.createElement('a');a.href=url;a.download=record.name;document.body.appendChild(a);a.click();a.remove()}setTimeout(()=>URL.revokeObjectURL(url),60000)}catch(e){toast('Не удалось открыть файл.')}}
+async function removeAttachment(id){const d=db.items.find(x=>(x.attachments||[]).some(a=>a.id===id));if(!d)return;try{await attachmentDelete(id);d.attachments=d.attachments.filter(a=>a.id!==id);persist();for(let n=0;n<docsFor(d).length;n++)renderAttachments(d,n);toast('Файл удалён.')}catch(e){toast('Не удалось удалить файл.')}}
+
+const docsFor=d=>docTemplates[d.type]||docTemplates.other;
+const stageOf=d=>db.stages.find(s=>s.id===d.stage);
+function statusOf(d){if(d.batchMatch===false)return 'bad';const n=docsFor(d);if(n.some((_,i)=>!d.docs[i]))return 'warn';if(n.some((_,i)=>!d.checked[i]))return 'review';return 'ok'}
+const missingNames=d=>docsFor(d).filter((_,i)=>!d.docs[i]);
+function noteFor(d){const s=statusOf(d);if(s==='bad')return 'Номер партии или маркировка не совпадает с данными поставки — требуется сверка.';if(s==='warn')return 'Не получены документы: '+missingNames(d).join(', ')+'.';if(s==='review')return 'Документы получены, но не все отмечены как проверенные.';return 'Обязательные документы отмечены как полученные и проверенные.'}
+
+function stageInfo(st){
+ const items=db.items.filter(d=>d.stage===st.id);const open=items.filter(d=>statusOf(d)!=='ok');const d=daysTo(st.start);
+ let gate,label,text;
+ if(!items.length){gate='none';label='Нет материалов';text='К этапу не привязаны поставки — нечего проверять.'}
+ else if(!open.length){gate='ok';label='Допуск есть';text='Комплект по этапу закрыт — можно готовить исполнительную документацию.'}
+ else{const k=`не закрыто поставок: ${open.length} из ${items.length}`;
+  if(d<0){gate='bad';label='Нарушение';text=`Работы начались ${-d} дн. назад, ${k}.`}
+  else if(d<=3){gate='bad';label='Критично';text=`Старт ${d===0?'сегодня':'через '+d+' дн.'}, ${k}.`}
+  else if(d<=10){gate='warn';label='Риск срыва';text=`Старт через ${d} дн., ${k}.`}
+  else{gate='review';label='Есть время';text=`Старт через ${d} дн., ${k}.`}}
+ return {st,items,open,d,gate,label,text,done:items.length-open.length};
+}
+const sortedStages=()=>[...db.stages].sort((a,b)=>a.start.localeCompare(b.start));
+const dayText=d=>d<0?`начат ${-d} дн. назад`:d===0?'старт сегодня':`через ${d} дн.`;
+
+function stageCard(info,full){
+ const {st,items,gate,label,text,done,d}=info;const pct=items.length?Math.round(done/items.length*100):0;
+ return `<div class="stagecard ${gate}"><h3>${esc(st.name)}</h3><div class="sub">${esc(st.work||'')}</div>
+ <div class="row"><span class="chip">Старт: ${fmt(st.start)} · ${dayText(d)}</span><span class="pill ${gate}">${label}</span></div>
+ <div class="bar" aria-hidden="true"><i style="width:${pct}%;background:${gate==='ok'?'#17845b':gate==='bad'?'#bd3946':'#d88a24'}"></i></div>
+ <div class="msg">${esc(text)}</div>
+ ${full?`<div class="matlist">${items.length?items.map(m=>`<button class="matitem" data-open-batch="${esc(m.batch)}"><span><i class="dot ${statusOf(m)}"></i><b>${esc(m.material)}</b> <span class="sub">· ${esc(m.batch)}</span></span><span class="sub">${esc(labels[statusOf(m)])}</span></button>`).join(''):'<div class="sub">Нет привязанных поставок</div>'}</div>
+ <div class="datefield"><label>Начало работ: <input type="date" value="${esc(st.start)}" data-stage-date="${esc(st.id)}"></label>${items.length?'':`<button class="mini dng" data-del-stage="${esc(st.id)}">Удалить этап</button>`}</div>`:''}</div>`;
+}
+
+function render(){
+ const enriched=db.items.map(d=>({...d,status:statusOf(d)}));
+ const total=db.items.length,ready=enriched.filter(d=>d.status==='ok').length,issues=enriched.filter(d=>d.status==='bad').length,missing=enriched.filter(d=>d.status==='warn').length,review=enriched.filter(d=>d.status==='review').length;
+ const set=(id,v)=>$(id).textContent=v;
+ set('total',total);set('ready',ready);set('issues',issues);set('missing',missing);
+ const pr=n=>Math.round(n/Math.max(total,1)*100);
+ set('percent',pr(ready)+'%');$('progress').style.width=pr(ready)+'%';
+ set('issuePercent',pr(issues+missing+review)+'%');$('issueProgress').style.width=pr(issues+missing+review)+'%';
+ const infos=sortedStages().map(stageInfo);
+ const okSt=infos.filter(i=>i.gate==='ok').length;const sp=Math.round(okSt/Math.max(infos.length,1)*100);
+ set('stagePercent',sp+'%');$('stageProgress').style.width=sp+'%';
+ const risky=infos.filter(i=>i.gate==='bad'||i.gate==='warn').length;const badge=$('navStageBadge');badge.style.display=risky?'inline-block':'none';badge.textContent=risky;
+ const upcoming=infos.filter(i=>!(i.d<0&&i.gate==='ok')).slice(0,3);
+ $('stageStrip').innerHTML=upcoming.map(i=>stageCard(i,false)).join('')||'<div class="empty" style="grid-column:1/-1">Нет предстоящих этапов</div>';
+ $('stageList').innerHTML=infos.map(i=>stageCard(i,true)).join('')||'<div class="empty" style="grid-column:1/-1">Этапов пока нет. Добавь первый этап кнопкой выше.</div>';
+ const attention=enriched.filter(d=>d.status!=='ok').map(d=>{const st=stageOf(d);const dd=st?daysTo(st.start):999;return {d,st,dd}}).sort((a,b)=>a.dd-b.dd).slice(0,6);
+ $('alerts').innerHTML=attention.length?attention.map(({d,st,dd})=>`<div class="alert"><div class="alert-icon ${dd<=3?'bad':''}">!</div><div><b>${esc(d.material)} · ${esc(d.batch)}</b><p>${st?'Этап «'+esc(st.name)+'» — '+dayText(dd)+'. ':''}${esc(noteFor(d))}</p><p><button class="mini" data-open-batch="${esc(d.batch)}">Открыть проверку</button></p></div></div>`).join(''):'<div class="empty">Нет проблемных поставок.</div>';
+ const stf=$('stageFilter');const keep=stf.value||'all';
+ stf.innerHTML='<option value="all">Все этапы</option>'+sortedStages().map(s=>`<option value="${esc(s.id)}">${esc(s.name)}</option>`).join('');stf.value=db.stages.some(s=>s.id===keep)?keep:'all';
+ const q=$('search').value.trim().toLowerCase(),f=$('statusFilter').value,sf=stf.value;
+ const filtered=enriched.filter(d=>(f==='all'||d.status===f)&&(sf==='all'||d.stage===sf)&&[d.material,d.batch,d.supplier].join(' ').toLowerCase().includes(q));
+ $('rows').innerHTML=filtered.length?filtered.map(d=>{const st=stageOf(d);return `<tr><td><div class="material">${esc(d.material)}</div><div class="sub">Партия: ${esc(d.batch)}</div></td><td>${st?`<span class="chip">${esc(st.name)}</span><div class="sub">${dayText(daysTo(st.start))}</div>`:'<span class="sub">не привязан</span>'}</td><td>${esc(d.supplier)}</td><td>${fmt(d.date)}</td><td>${esc(d.owner||'—')}</td><td>${d.docs.filter(Boolean).length} из ${docsFor(d).length}</td><td><span class="pill ${d.status}">${labels[d.status]}</span></td><td><button class="mini" data-open-batch="${esc(d.batch)}">Карточка проверки</button></td></tr>`}).join(''):`<tr><td colspan="8" class="empty">${total?'Ничего не найдено':'Поставок пока нет. Добавь первую кнопкой выше.'}</td></tr>`;
+ set('reportDate','Сформирован '+fmt(iso(TODAY))+' · демонстрационные данные');
+ $('reportStages').innerHTML=infos.length?infos.map(i=>`<tr><td><div class="material">${esc(i.st.name)}</div><div class="sub">${esc(i.st.work||'')}</div></td><td>${fmt(i.st.start)}</td><td>${dayText(i.d)}</td><td>${i.items.length}</td><td>${i.done}</td><td><span class="pill ${i.gate}">${i.label}</span></td></tr>`).join(''):'<tr><td colspan="6" class="empty">Этапов нет</td></tr>';
+ const openItems=enriched.filter(d=>d.status!=='ok');
+ $('reportOpen').innerHTML=openItems.length?openItems.map(d=>{const st=stageOf(d);return `<tr><td><div class="material">${esc(d.material)}</div><div class="sub">Партия: ${esc(d.batch)} · ${esc(d.supplier)}</div></td><td>${st?esc(st.name):'—'}</td><td>${esc(noteFor(d))}</td><td>${esc(d.owner||'—')}</td></tr>`}).join(''):'<tr><td colspan="4" class="empty">Открытых вопросов нет</td></tr>';
+ const ss=$('stage');const cur=ss.value;ss.innerHTML=sortedStages().map(s=>`<option value="${esc(s.id)}">${esc(s.name)} (с ${fmt(s.start)})</option>`).join('');if(cur&&db.stages.some(s=>s.id===cur))ss.value=cur;
+}
+
+function toast(t){const el=$('toast');el.textContent=t;el.classList.add('show');clearTimeout(toast.t);toast.t=setTimeout(()=>el.classList.remove('show'),3000)}
+
+function show(view,keepScroll){
+ if(!viewNames[view])view='overview';
+ document.querySelectorAll('.view').forEach(v=>v.classList.toggle('active',v.id==='view-'+view));
+ document.querySelectorAll('[data-view]').forEach(n=>n.classList.toggle('active',n.dataset.view===view));
+ $('crumb').textContent='Объект / Мостовое сооружение / '+viewNames[view];
+ try{history.replaceState(null,'','#'+view)}catch(e){}
+ if(!keepScroll)window.scrollTo(0,0);
+}
+document.querySelectorAll('[data-view]').forEach(n=>n.addEventListener('click',()=>show(n.dataset.view)));
+document.querySelectorAll('[data-goto]').forEach(n=>n.addEventListener('click',()=>show(n.dataset.goto)));
+document.querySelectorAll('[data-stat]').forEach(n=>n.addEventListener('click',()=>{$('search').value='';$('stageFilter').value='all';$('statusFilter').value=n.dataset.stat;render();show('deliveries')}));
+
+function openModal(id,focusId){$(id).classList.add('show');if(focusId)setTimeout(()=>{const el=$(focusId);el&&el.focus()},30)}
+function closeModal(id){$(id).classList.remove('show')}
+document.addEventListener('keydown',e=>{if(e.key==='Escape')document.querySelectorAll('.modalback.show').forEach(m=>m.classList.remove('show'))});
+
+function docStateText(d,i){return d.docs[i]?(d.checked[i]?'Получен · проверен':'Получен · ожидает проверки'):'Не получен'}
+function openDetails(batch){
+ const d=db.items.find(x=>x.batch===batch);if(!d)return;activeBatch=batch;const docs=docsFor(d);const st=stageOf(d);
+ $('reqArea').innerHTML='';
+ $('detailTitle').textContent=d.material+' · '+d.batch;
+ $('detailSubtitle').textContent=d.supplier+' · Поставка: '+fmt(d.date);
+ $('detailBody').innerHTML=`<div class="rulebox"><strong>Автоматический статус: ${labels[statusOf(d)]}</strong><br>${esc(noteFor(d))}${st?`<br><span class="sub">Этап «${esc(st.name)}»: ${dayText(daysTo(st.start))}</span>`:''}</div>
+ <div class="formgrid" style="margin:12px 0"><div class="field"><label for="dStage">Этап работ</label><select id="dStage">${sortedStages().map(s=>`<option value="${esc(s.id)}" ${s.id===d.stage?'selected':''}>${esc(s.name)}</option>`).join('')}</select></div><div class="field"><label for="dOwner">Ответственный</label><select id="dOwner">${['Снабжение','ПТО','Лаборатория','Прораб'].map(o=>`<option ${o===d.owner?'selected':''}>${o}</option>`).join('')}</select></div></div>
+ <h3 style="font-size:14px;margin:16px 0 8px">Обязательные документы</h3><div class="doclist">${docs.map((name,i)=>`<div class="docitem"><input type="checkbox" data-doc="${i}" ${d.docs[i]?'checked':''}><span class="docmain"><b>${esc(name)}</b><small>${docStateText(d,i)}</small><br><span style="font-size:12px"><input type="checkbox" data-checked="${i}" ${d.checked[i]?'checked':''} ${d.docs[i]?'':'disabled'}> Документ проверен</span><label class="file-attach"><input type="file" data-file-doc="${i}" multiple>＋ Прикрепить файл</label><span class="file-hint">Можно выбрать несколько файлов</span><div class="attachment-list" data-attachments="${i}"></div></span></div>`).join('')}</div>
+ <div class="rulebox"><label style="display:flex;gap:9px;align-items:flex-start"><input type="checkbox" id="batchMatch" ${d.batchMatch?'checked':''} style="margin-top:4px;accent-color:var(--purple)"><span><strong>Номер партии и маркировка совпадают</strong><br><small>Сверено с накладной и данными поставки.</small></span></label></div>
+ <div class="field"><label for="note">Комментарий инженера (необязательно)</label><input id="note" value="${esc(d.note||'')}" placeholder="Например, запросили исправленный документ"></div>`;
+ const body=$('detailBody');
+ function refreshState(i){const doc=body.querySelector(`input[data-doc="${i}"]`),chk=body.querySelector(`input[data-checked="${i}"]`);doc.closest('.docitem').querySelector('small').textContent=doc.checked?(chk.checked?'Получен · проверен':'Получен · ожидает проверки'):'Не получен'}
+ body.querySelectorAll('input[data-doc]').forEach(el=>el.addEventListener('change',()=>{const i=+el.dataset.doc;const chk=body.querySelector(`input[data-checked="${i}"]`);if(!el.checked){chk.checked=false;chk.disabled=true}else chk.disabled=false;refreshState(i)}));
+ body.querySelectorAll('input[data-checked]').forEach(el=>el.addEventListener('change',()=>refreshState(+el.dataset.checked)));
+ body.querySelectorAll('input[data-file-doc]').forEach(el=>el.addEventListener('change',()=>handleFileSelection(el,+el.dataset.fileDoc,d)));
+ docs.forEach((_,i)=>renderAttachments(d,i));
+ openModal('detailModal');
+}
+function readForm(d){
+ const body=$('detailBody');const n=docsFor(d);
+ const docs=n.map((_,i)=>body.querySelector(`input[data-doc="${i}"]`).checked);
+ const checked=n.map((_,i)=>body.querySelector(`input[data-checked="${i}"]`).checked&&docs[i]);
+ return {docs,checked,batchMatch:$('batchMatch').checked,note:$('note').value.trim(),stage:$('dStage').value,owner:$('dOwner').value};
+}
+$('saveDetail').addEventListener('click',()=>{const d=db.items.find(x=>x.batch===activeBatch);if(!d)return;Object.assign(d,readForm(d));persist();closeModal('detailModal');render();toast('Проверка сохранена. Статусы поставки и этапа обновлены.')});
+$('delBtn').addEventListener('click',()=>{const d=db.items.find(x=>x.batch===activeBatch);if(!d)return;if(confirm(`Удалить поставку «${d.material}» (партия ${d.batch})? Это действие нельзя отменить.`)){db.items=db.items.filter(x=>x!==d);persist();closeModal('detailModal');render();toast('Поставка удалена.')}});
+
+$('reqBtn').addEventListener('click',()=>{
+ const d=db.items.find(x=>x.batch===activeBatch);if(!d)return;const tmp={...d,...readForm(d)};
+ const st=db.stages.find(s=>s.id===tmp.stage);const miss=missingNames(tmp);
+ if(!miss.length&&tmp.batchMatch){toast('Запрашивать нечего: все документы получены, партия совпадает.');return}
+ const lines=[];if(miss.length)lines.push('направить недостающие документы: '+miss.join('; '));if(!tmp.batchMatch)lines.push('уточнить номер партии и маркировку — данные не совпадают с накладной');
+ const text=`Добрый день!\n\nПо поставке «${d.material}» (партия ${d.batch}, ${fmt(d.date)}) просим ${lines.join(', а также ')}.\n\nДокументы нужны для допуска материала к работам${st?' на этапе «'+st.name+'» (начало работ '+fmt(st.start)+')':''}. Просим ответить в ближайшие 1–2 рабочих дня.\n\nС уважением,\nИнженер ПТО`;
+ $('reqArea').innerHTML=`<div class="field" style="margin-top:14px"><label for="reqText">Текст запроса поставщику</label><textarea class="reqbox" id="reqText" readonly>${esc(text)}</textarea><button class="btn secondary" id="copyReq" type="button" style="align-self:flex-start">Скопировать текст</button></div>`;
+ $('copyReq').onclick=()=>{const ta=$('reqText');ta.select();const fb=()=>{try{document.execCommand('copy');toast('Текст скопирован')}catch(e){toast('Не удалось скопировать — выдели текст вручную')}};if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(ta.value).then(()=>toast('Текст скопирован'),fb)}else fb()};
+});
+
+document.addEventListener('click',e=>{
+ const oa=e.target.closest('[data-open-attachment]');if(oa){openAttachment(oa.dataset.openAttachment);return}
+ const da=e.target.closest('[data-delete-attachment]');if(da){if(confirm('Удалить прикреплённый файл?'))removeAttachment(da.dataset.deleteAttachment);return}
+ const b=e.target.closest('[data-open-batch]');if(b){openDetails(b.dataset.openBatch);return}
+ const ds=e.target.closest('[data-del-stage]');if(ds){const st=db.stages.find(s=>s.id===ds.dataset.delStage);if(st&&confirm(`Удалить этап «${st.name}»?`)){db.stages=db.stages.filter(s=>s!==st);persist();render();toast('Этап удалён.')}}
+});
+document.addEventListener('change',e=>{const el=e.target.closest('[data-stage-date]');if(!el)return;const st=db.stages.find(s=>s.id===el.dataset.stageDate);if(!st)return;if(el.value){st.start=el.value;persist();render();toast('Дата начала этапа обновлена. Допуски пересчитаны.')}else el.value=st.start});
+$('search').addEventListener('input',render);['statusFilter','stageFilter'].forEach(id=>$(id).addEventListener('change',render));
+
+document.querySelectorAll('[data-add]').forEach(b=>b.addEventListener('click',()=>{if(!db.stages.length){toast('Сначала добавь хотя бы один этап работ.');show('stages');return}$('date').value=iso(TODAY);openModal('addModal','material')}));
+document.querySelectorAll('[data-add-stage]').forEach(b=>b.addEventListener('click',()=>{$('stStart').value=iso(TODAY);openModal('stageModal','stName')}));
+document.querySelectorAll('[data-close]').forEach(b=>b.addEventListener('click',()=>closeModal(b.dataset.close)));
+document.querySelectorAll('.modalback').forEach(m=>m.addEventListener('mousedown',e=>{if(e.target===m)m.classList.remove('show')}));
+
+$('addForm').addEventListener('submit',e=>{e.preventDefault();const batch=$('batch').value.trim();if(db.items.some(d=>d.batch.toLowerCase()===batch.toLowerCase())){toast('Такая партия уже есть в реестре. Укажи уникальный номер.');return}
+ const type=$('type').value;const n=docTemplates[type].length;
+ db.items.unshift({material:$('material').value.trim(),type,batch,supplier:$('supplier').value.trim(),date:$('date').value,stage:$('stage').value,owner:$('owner').value,docs:Array(n).fill(false),checked:Array(n).fill(false),batchMatch:true,note:'',attachments:[]});
+ persist();e.target.reset();closeModal('addModal');render();toast('Поставка добавлена. Открой карточку и отметь документы.')});
+$('stageForm').addEventListener('submit',e=>{e.preventDefault();db.stages.push({id:'s'+Date.now().toString(36),name:$('stName').value.trim(),work:$('stWork').value.trim(),start:$('stStart').value});persist();e.target.reset();closeModal('stageModal');render();toast('Этап добавлен. Теперь можно привязывать к нему поставки.')});
+document.querySelectorAll('[data-reset]').forEach(b=>b.addEventListener('click',()=>{if(confirm('Вернуть исходные демонстрационные данные? Текущие изменения будут удалены.')){db=makeSeed();persist();render();toast('Демонстрационные данные восстановлены')}}));
+
+$('printBtn').addEventListener('click',()=>window.print());
+$('csvBtn').addEventListener('click',()=>{
+ const q=v=>{let s=String(v==null?'':v);if(/^[=+\-@]/.test(s))s="'"+s;return '"'+s.replace(/"/g,'""')+'"'};
+ const rows=[['Материал','Партия','Поставщик','Дата поставки','Этап работ','Начало этапа','Ответственный','Статус','Что не закрыто']];
+ db.items.forEach(d=>{const st=stageOf(d);rows.push([d.material,d.batch,d.supplier,fmt(d.date),st?st.name:'',st?fmt(st.start):'',d.owner||'',labels[statusOf(d)],statusOf(d)==='ok'?'':noteFor(d)])});
+ const blob=new Blob(['﻿'+rows.map(r=>r.map(q).join(';')).join('\r\n')],{type:'text/csv;charset=utf-8'});const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='stroykontrol_report_'+iso(TODAY)+'.csv';document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(a.href),1000);toast('CSV сформирован');
+});
+render();
+show(location.hash.slice(1),true);
+</script></body></html>
+
