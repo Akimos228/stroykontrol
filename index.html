@@ -1,38 +1,525 @@
 <!doctype html>
-<html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>СтройКонтроль — документы объекта</title>
+<html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#1b1e23"><title>СтройКонтроль — документы объекта</title><link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%231b1e23'/%3E%3Crect x='8' y='7.5' width='16' height='3' rx='1.5' fill='%23f59e0b'/%3E%3Crect x='8' y='14' width='11' height='3' rx='1.5' fill='%23f59e0b'/%3E%3Crect x='8' y='20.5' width='7' height='3' rx='1.5' fill='%23f59e0b'/%3E%3C/svg%3E">
 <style>
-:root{--purple:#5528a7;--purple2:#7445c6;--bg:#f4f5f9;--ink:#202334;--muted:#6b7084;--line:#e5e7ef;--green:#17845b;--orange:#b86a09;--red:#bd3946;--white:#fff}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font:15px/1.45 -apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;background:var(--bg);color:var(--ink);-webkit-font-smoothing:antialiased}button,input,select,textarea{font:inherit;color:inherit}button{cursor:pointer}:focus-visible{outline:3px solid #b9a2ee;outline-offset:2px;border-radius:8px}.app{min-height:100vh;display:grid;grid-template-columns:238px 1fr}.side{background:#24134a;color:white;padding:24px 16px;position:sticky;top:0;height:100vh;overflow:auto;align-self:start}.brand{display:flex;align-items:center;gap:11px;padding:0 8px 28px}.logo{width:40px;height:40px;border-radius:12px;background:linear-gradient(135deg,#a98aef,#6a3bc0);display:grid;place-items:center;font-weight:800;font-size:18px}.brand b{display:block;font-size:16px}.brand small{color:#c8bce4}.navlabel{font-size:11px;color:#b4a6d5;text-transform:uppercase;letter-spacing:1px;padding:12px 12px 7px}.nav{display:flex;gap:11px;align-items:center;padding:12px;border-radius:10px;color:#e6def5;margin:3px 0;cursor:pointer;user-select:none;width:100%;border:0;background:none;text-align:left;transition:background .15s}.nav:hover{background:#3a2370}.nav.active{background:#5736a1;color:#fff}.nav span{width:19px;text-align:center}.nav em{margin-left:auto;font-style:normal;background:#d88a24;color:#fff;border-radius:10px;font-size:11px;padding:1px 7px;font-weight:700}.main{min-width:0}.top{height:76px;background:#fff;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;padding:0 32px}.crumb{font-size:13px;color:var(--muted)}.user{display:flex;gap:10px;align-items:center;font-size:13px}.avatar{height:35px;width:35px;background:#e9e0fb;color:var(--purple);border-radius:50%;display:grid;place-items:center;font-weight:700}.content{padding:30px 32px;max-width:1500px;margin:auto}.tabs{display:none;gap:8px;overflow:auto;margin-bottom:16px;padding-bottom:2px}.tab{white-space:nowrap;padding:9px 13px;border-radius:20px;background:#fff;border:1px solid var(--line);font-size:13px;font-weight:650}.tab.active{background:var(--purple);color:#fff;border-color:var(--purple)}.heading{display:flex;justify-content:space-between;align-items:flex-start;gap:18px;margin-bottom:23px}.heading h1{font-size:27px;margin:0 0 6px}.heading p{color:var(--muted);margin:0;max-width:720px}.btn{border:0;border-radius:9px;padding:11px 15px;font-weight:650;transition:background .15s}.primary{background:var(--purple);color:#fff}.primary:hover{background:#432083}.secondary{background:#f0eafb;color:var(--purple)}.secondary:hover{background:#e6dcf8}.danger{background:#fde8eb;color:var(--red)}.danger:hover{background:#fbd5da}.stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:15px;margin-bottom:22px}.stat{background:#fff;border:1px solid var(--line);border-radius:14px;padding:18px;text-align:left;display:block;width:100%;transition:border-color .15s,box-shadow .15s}.stat:hover{border-color:#b8a4e5;box-shadow:0 4px 16px #5528a712}.stat-top{display:flex;justify-content:space-between;align-items:center;color:var(--muted);font-size:13px}.stat-icon{width:35px;height:35px;border-radius:10px;display:grid;place-items:center;background:#f0eafb;color:var(--purple);font-size:17px}.stat strong{display:block;font-size:29px;margin-top:10px;font-variant-numeric:tabular-nums}.stat small{color:var(--muted)}.panel{background:#fff;border:1px solid var(--line);border-radius:14px;overflow:hidden;margin-bottom:17px}.panel-head{padding:19px 20px;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;gap:12px}.panel-head h2{font-size:17px;margin:0}.filters{display:flex;gap:9px;flex-wrap:wrap}.filters input,.filters select{border:1px solid var(--line);border-radius:8px;padding:9px 11px;background:white}.filters input{width:220px}.tablewrap{overflow:auto}table{border-collapse:collapse;width:100%;min-width:900px}th{text-align:left;background:#fafaff;color:#74788b;font-size:11px;text-transform:uppercase;letter-spacing:.45px;padding:13px 17px;font-weight:700}td{padding:15px 17px;border-top:1px solid #eef0f5;vertical-align:middle}tbody tr:hover{background:#fcfbff}.material{font-weight:700}.sub{font-size:12px;color:var(--muted);margin-top:3px}.pill{display:inline-flex;align-items:center;gap:6px;border-radius:20px;padding:6px 9px;font-size:12px;font-weight:700;white-space:nowrap}.pill:before{content:"";width:6px;height:6px;border-radius:50%;background:currentColor}.ok{background:#e4f6ee;color:var(--green)}.warn{background:#fff1dc;color:var(--orange)}.bad{background:#fde8eb;color:var(--red)}.review{background:#ecebff;color:#5d51b8}.none{background:#eceef3;color:#6a6f82}.mini{border:1px solid var(--line);background:white;border-radius:7px;padding:7px 9px;color:#555a6b}.mini:hover{border-color:#b8a4e5;color:var(--purple)}.mini.dng:hover{border-color:#e9aab2;color:var(--red)}.chip{display:inline-block;background:#f0eafb;color:var(--purple);border-radius:6px;padding:3px 8px;font-size:12px;font-weight:650}.bottom{display:grid;grid-template-columns:1.2fr .8fr;gap:16px}.smallpanel{background:#fff;border:1px solid var(--line);border-radius:14px;padding:19px}.smallpanel h3{font-size:16px;margin:0 0 14px}.alert{display:flex;gap:11px;padding:12px 0;border-top:1px solid #eef0f5}.alert-icon{width:31px;height:31px;display:grid;place-items:center;border-radius:9px;background:#fff1dc;color:var(--orange);flex-shrink:0}.alert-icon.bad{background:#fde8eb;color:var(--red)}.alert b{font-size:13px}.alert p{margin:3px 0 0;color:var(--muted);font-size:12px}.progressrow{display:flex;justify-content:space-between;font-size:13px;margin:14px 0 7px}.bar{height:8px;border-radius:10px;background:#eeeaf6;overflow:hidden}.bar i{display:block;height:100%;background:var(--purple);border-radius:10px;transition:width .3s}.footer-note{color:#7d8296;font-size:11px;margin-top:20px}.empty{padding:30px;text-align:center;color:var(--muted)}.modalback{display:none;position:fixed;inset:0;background:#19112f77;align-items:center;justify-content:center;padding:18px;z-index:10}.modalback.show{display:flex}.modal{background:#fff;border-radius:16px;width:min(680px,100%);max-height:92vh;overflow:auto;padding:24px;box-shadow:0 20px 70px #1d143844}.modal h2{margin:0 0 5px}.modal>p{color:var(--muted);font-size:13px;margin:0 0 18px}.formgrid{display:grid;grid-template-columns:1fr 1fr;gap:13px}.field{display:flex;flex-direction:column;gap:6px}.field.full{grid-column:1/-1}.field label{font-size:12px;color:#62677a;font-weight:700}.field input,.field select,.field textarea{padding:10px;border:1px solid var(--line);border-radius:8px;min-width:0;background:#fff}.modal-actions{display:flex;justify-content:flex-end;gap:9px;margin-top:22px;flex-wrap:wrap}.doclist{display:grid;gap:9px;margin:15px 0}.docitem{display:flex;align-items:flex-start;gap:10px;padding:12px;border:1px solid var(--line);border-radius:10px}.docitem input{margin-top:4px;accent-color:var(--purple)}.docitem b{font-size:13px;display:block}.docitem small{color:var(--muted)}.rulebox{background:#f8f6fd;border:1px solid #e9e0fb;border-radius:10px;padding:12px;margin:12px 0;font-size:13px}.rulebox strong{color:var(--purple)}.toast{position:fixed;right:20px;bottom:20px;background:#211345;color:white;padding:13px 17px;border-radius:10px;box-shadow:0 8px 28px #0002;display:none;z-index:20;max-width:calc(100vw - 40px)}.toast.show{display:block}.top-actions{display:flex;gap:8px;align-items:center;flex-wrap:wrap}.view{display:none}.view.active{display:block}
-.stagegrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:15px;margin-bottom:17px}.stagecard{background:#fff;border:1px solid var(--line);border-radius:14px;padding:18px;border-top:4px solid #cfc5ea}.stagecard.ok{border-top-color:var(--green)}.stagecard.warn{border-top-color:#d88a24}.stagecard.bad{border-top-color:var(--red)}.stagecard h3{margin:0 0 3px;font-size:16px}.stagecard .row{display:flex;justify-content:space-between;align-items:center;gap:8px;margin:10px 0;flex-wrap:wrap}.stagecard .msg{font-size:12.5px;color:#4b5064;margin:10px 0}.matlist{border-top:1px solid #eef0f5;margin-top:12px;padding-top:8px}.matitem{display:flex;justify-content:space-between;align-items:center;gap:8px;padding:6px 0;font-size:13px;cursor:pointer;width:100%;background:none;border:0;text-align:left}.matitem:hover b{color:var(--purple)}.dot{width:9px;height:9px;border-radius:50%;display:inline-block;margin-right:7px}.dot.ok{background:var(--green)}.dot.warn{background:#d88a24}.dot.bad{background:var(--red)}.dot.review{background:#7b6fd0}.datefield{display:flex;align-items:center;gap:8px;font-size:12px;color:var(--muted);margin-top:10px;flex-wrap:wrap}.datefield input{border:1px solid var(--line);border-radius:7px;padding:6px 8px}.datefield .mini{margin-left:auto}.reqbox{width:100%;min-height:150px;font-size:13px;margin-top:8px;border:1px solid var(--line);border-radius:8px;padding:10px}.hint{font-size:12px;color:var(--muted);margin-top:12px}.auth-btn{margin-left:8px}.auth-modal{width:min(430px,100%)}.auth-error{color:var(--red);font-size:12px;margin-top:8px}.cloud-state{font-size:11px;color:var(--muted)}.docmain{display:block;min-width:0;flex:1}.file-attach{display:inline-flex;align-items:center;gap:6px;color:var(--purple);font-size:12px;font-weight:650;cursor:pointer;margin-top:8px}.file-attach input{position:absolute;width:1px;height:1px;opacity:0;pointer-events:none}.attachment-list{display:grid;gap:6px;margin-top:8px}.attachment-row{display:flex;align-items:center;gap:7px;flex-wrap:wrap;background:#fafaff;border:1px solid #ebe8f5;border-radius:7px;padding:6px 8px;font-size:12px}.attachment-name{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:260px}.attachment-actions{display:flex;gap:5px;margin-left:auto}.attachment-actions button{font-size:11px;padding:4px 6px}.file-hint{display:block;color:var(--muted);font-size:11px;margin-top:5px}
-@media(max-width:950px){.app{grid-template-columns:1fr}.side{display:none}.tabs{display:flex}.content{padding:22px 16px}.top{padding:0 17px}.stats{grid-template-columns:repeat(2,minmax(0,1fr))}.bottom{grid-template-columns:1fr}.heading h1{font-size:23px}}@media(max-width:520px){.stats{gap:8px}.stat{padding:13px}.stat strong{font-size:24px}.heading{flex-direction:column}.filters input{width:100%}.filters{width:100%}.filters select{flex:1}.formgrid{grid-template-columns:1fr}.field.full{grid-column:auto}.panel-head{align-items:flex-start;flex-direction:column}.modal-actions .btn{flex:1}}
-@media print{.side,.top,.tabs,.top-actions,.toast,.mini,.modalback,.footer-note{display:none!important}.app{display:block}body{background:#fff}.content{padding:0}.panel,.smallpanel{border:1px solid #ccc}}
-/* Свежая визуальная тема */
-:root{--purple:#0f766e;--purple2:#14b8a6;--bg:#f3f7f7;--ink:#17252b;--muted:#64757b;--line:#dce8e7;--green:#16805f;--orange:#b66a12;--red:#bd4350;--white:#fff}
-body{background:linear-gradient(135deg,#f3f7f7 0%,#eef5f4 100%);font-family:Inter,Segoe UI,Arial,sans-serif}
-.side{background:linear-gradient(180deg,#12343a 0%,#0c242b 100%);padding:22px 14px;box-shadow:8px 0 30px #12343a14}
-.logo{background:linear-gradient(135deg,#5eead4,#0f766e);box-shadow:0 8px 20px #14b8a644}
-.brand{padding-bottom:34px}.brand small{color:#a9c9c9}.navlabel{color:#8fb5b5}.nav{color:#d8eeee;padding:13px;border-radius:12px}.nav:hover{background:#1b4b52}.nav.active{background:#18a999;color:#fff;box-shadow:0 8px 18px #18a99944}
-.top{height:82px;background:#ffffffed;backdrop-filter:blur(12px);padding:0 34px}.content{padding:32px 34px}
-.heading h1{letter-spacing:-.5px}.btn{border-radius:11px;box-shadow:0 3px 10px #153b3b0d}.primary{background:#0f766e}.primary:hover{background:#0b5f59}.secondary{background:#dff4f1;color:#0f766e}.secondary:hover{background:#c9ece8}
-.stats{gap:18px}.stat,.panel,.smallpanel,.stagecard{border-radius:18px;box-shadow:0 8px 24px #153b3b0b}.stat{padding:20px}.stat:hover{border-color:#8bd5cd;box-shadow:0 10px 26px #0f766e1c}.stat-icon{background:#dff4f1;color:#0f766e}
-.panel-head{padding:20px 22px;background:#ffffffcc}.panel-head h2{letter-spacing:-.2px}th{background:#f5fbfa;color:#6b7d80}td{border-top-color:#e6efee}tbody tr:hover{background:#f4fbfa}
-.chip{background:#dff4f1;color:#0f766e}.pill.review{background:#e5f1ff;color:#3270a9}.bar{background:#e3efee}.bar i{background:#0f766e}
-.stagecard{border-top-width:5px}.stagecard.ok{border-top-color:#16805f}.stagecard.warn{border-top-color:#d58a22}.stagecard.bad{border-top-color:#bd4350}.matitem:hover b{color:#0f766e}
-.modal{border-radius:20px;box-shadow:0 24px 80px #12343a33}.modalback{background:#0e2b3077}.rulebox{background:#effaf8;border-color:#cfece8}.toast{background:#12343a;border-radius:12px}
-@media(max-width:950px){.top{padding:0 18px}.content{padding:24px 18px}}</style></head><body><div class="app"><aside class="side"><div class="brand"><div class="logo">СК</div><div><b>СтройКонтроль</b><small>Документы объекта</small></div></div><div class="navlabel">Рабочее пространство</div><nav aria-label="Разделы"><button class="nav active" data-view="overview"><span>▦</span> Обзор</button><button class="nav" data-view="stages"><span>◈</span> Этапы работ <em id="navStageBadge" style="display:none"></em></button><button class="nav" data-view="deliveries"><span>▤</span> Поставки и материалы</button><button class="nav" data-view="report"><span>▥</span> Отчёт</button></nav></aside>
+/* ============================================================
+   СтройКонтроль · тема A «Индустриальная»
+   Плоские поверхности, тонкие линии, графит + янтарь,
+   табличные цифры, квадратные маркеры статусов.
+   ============================================================ */
+
+:root{
+  --ink:#15181c;
+  --ink-2:#3f4650;
+  --muted:#6b7280;
+  --bg:#f4f5f6;
+  --surface:#fff;
+  --line:#e3e6ea;
+  --line-2:#ccd2d9;
+  --accent:#a9550b;
+  --accent-fill:#f59e0b;
+  --accent-ink:#1a1c1f;
+  --side:#1b1e23;
+  --side-hover:#252a31;
+  --side-active:#2b3139;
+  --ok:#15803d;
+  --warn:#b45309;
+  --bad:#b91c1c;
+  --review:#1d4ed8;
+  --r:8px;
+  --r-sm:6px;
+  --mono:ui-monospace,SFMono-Regular,"SF Mono",Menlo,Consolas,"Liberation Mono",monospace;
+  /* обратная совместимость со старыми именами переменных */
+  --purple:var(--accent);
+  --purple2:var(--accent-fill);
+  --green:var(--ok);
+  --orange:var(--warn);
+  --red:var(--bad);
+  --white:#fff;
+}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  font:14px/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
+  background:var(--bg);
+  color:var(--ink);
+  -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
+}
+button,input,select,textarea{font:inherit;color:inherit}
+button{cursor:pointer}
+
+/* фокус: тонкое янтарное кольцо вместо толстой фиолетовой рамки */
+:focus-visible{outline:2px solid var(--accent-fill);outline-offset:2px}
+input:focus-visible,select:focus-visible,textarea:focus-visible{
+  outline:none;border-color:var(--accent-fill);box-shadow:0 0 0 3px rgba(245,158,11,.18)
+}
+::selection{background:rgba(245,158,11,.28)}
+
+*{scrollbar-width:thin;scrollbar-color:#c3c9d1 transparent}
+::-webkit-scrollbar{width:10px;height:10px}
+::-webkit-scrollbar-thumb{background:#c3c9d1;border-radius:6px;border:2px solid var(--bg)}
+::-webkit-scrollbar-track{background:transparent}
+
+/* ---------- каркас ---------- */
+.app{min-height:100vh;display:grid;grid-template-columns:236px 1fr}
+
+.side{
+  background:var(--side);
+  color:#e8ecf0;
+  padding:0 0 14px;
+  position:sticky;top:0;height:100vh;overflow:auto;align-self:start;
+  display:flex;flex-direction:column;
+}
+.brand{display:flex;align-items:center;gap:10px;padding:16px 16px;border-bottom:1px solid #2b3037}
+.logo{
+  width:34px;height:34px;border-radius:var(--r-sm);
+  background:var(--accent-fill);color:var(--accent-ink);
+  display:grid;place-items:center;font-weight:800;font-size:14px;letter-spacing:-.4px;
+  flex-shrink:0;
+}
+.brand b{display:block;font-size:14px;font-weight:700;letter-spacing:.1px;line-height:1.3}
+.brand small{display:block;color:#8b949f;font-size:11px;line-height:1.4}
+
+.navlabel{
+  font-size:10px;color:#6f7883;text-transform:uppercase;letter-spacing:1.1px;
+  font-weight:700;padding:18px 16px 8px;
+}
+.nav{
+  display:flex;gap:10px;align-items:center;
+  padding:9px 12px;margin:2px 10px;border-radius:var(--r-sm);
+  color:#b9c1cb;background:none;border:0;width:calc(100% - 20px);
+  text-align:left;font-size:13.5px;font-weight:500;
+  position:relative;transition:background .12s,color .12s;
+}
+.nav:hover{background:var(--side-hover);color:#eef1f4}
+.nav.active{background:var(--side-active);color:#fff;font-weight:600}
+.nav.active::before{
+  content:"";position:absolute;left:-10px;top:7px;bottom:7px;width:3px;
+  background:var(--accent-fill);border-radius:0 2px 2px 0;
+}
+.nav svg{width:17px;height:17px;flex-shrink:0;opacity:.8}
+.nav.active svg{opacity:1;color:var(--accent-fill)}
+.nav em{
+  margin-left:auto;font-style:normal;background:var(--bad);color:#fff;
+  border-radius:4px;font-size:10px;font-weight:700;padding:1px 6px;
+  font-variant-numeric:tabular-nums;
+}
+
+.main{min-width:0}
+
+.top{
+  height:60px;background:var(--surface);border-bottom:1px solid var(--line);
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0 24px;gap:16px;
+}
+.crumb{font-size:12px;color:var(--muted);letter-spacing:.1px}
+.user{display:flex;gap:9px;align-items:center;font-size:12.5px}
+.user b{font-size:13px;font-weight:600}
+.avatar{
+  height:30px;width:30px;background:#eceef1;color:var(--ink-2);
+  border-radius:var(--r-sm);display:grid;place-items:center;
+  font-weight:700;font-size:11.5px;letter-spacing:.3px;flex-shrink:0;
+}
+
+.content{padding:24px;max-width:1440px;margin:0 auto}
+
+/* ---------- вкладки (мобильные) ---------- */
+.tabs{display:none;gap:6px;overflow:auto;margin-bottom:14px;padding-bottom:2px}
+.tab{
+  white-space:nowrap;padding:7px 12px;border-radius:var(--r-sm);
+  background:var(--surface);border:1px solid var(--line-2);
+  font-size:12.5px;font-weight:600;color:var(--ink-2);
+}
+.tab.active{background:var(--ink);color:#fff;border-color:var(--ink)}
+
+/* ---------- заголовки ---------- */
+.heading{display:flex;justify-content:space-between;align-items:flex-start;gap:18px;margin-bottom:20px}
+.heading h1{font-size:23px;line-height:1.25;margin:0 0 5px;font-weight:700;letter-spacing:-.4px}
+.heading p{color:var(--muted);margin:0;max-width:760px;font-size:13px}
+.top-actions{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+
+/* ---------- кнопки ---------- */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:7px;
+  border:1px solid transparent;border-radius:var(--r-sm);
+  padding:9px 14px;font-size:13px;font-weight:600;
+  transition:background .12s,border-color .12s,color .12s;
+  white-space:nowrap;
+}
+.btn svg{width:15px;height:15px}
+.primary{background:var(--accent-fill);color:var(--accent-ink);border-color:#dc8c06}
+.primary:hover{background:#fbb01c;border-color:#c97f05}
+.primary:active{background:#e08c05}
+.secondary{background:var(--surface);color:var(--ink-2);border-color:var(--line-2)}
+.secondary:hover{background:#f7f8f9;border-color:#b4bcc5;color:var(--ink)}
+.danger{background:var(--surface);color:var(--bad);border-color:#e2b3b3}
+.danger:hover{background:#fdf3f3;border-color:#cf8f8f}
+
+.mini{
+  display:inline-flex;align-items:center;gap:5px;
+  border:1px solid var(--line-2);background:var(--surface);
+  border-radius:var(--r-sm);padding:5px 9px;
+  color:var(--ink-2);font-size:12px;font-weight:600;
+  transition:background .12s,border-color .12s,color .12s;
+}
+.mini:hover{background:#f7f8f9;border-color:#b4bcc5;color:var(--ink)}
+.mini.dng:hover{border-color:#cf8f8f;color:var(--bad);background:#fdf3f3}
+.mini svg{width:12px;height:12px}
+
+/* ---------- показатели ---------- */
+.stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-bottom:16px}
+.stat{
+  background:var(--surface);border:1px solid var(--line);border-radius:var(--r);
+  padding:15px 16px 14px;text-align:left;display:block;width:100%;
+  transition:border-color .12s,background .12s;
+  position:relative;
+}
+.stat:hover{border-color:var(--line-2);background:#fcfcfd}
+.stat:hover::after{content:"";position:absolute;left:-1px;right:-1px;top:-1px;height:2px;background:var(--accent-fill);border-radius:var(--r) var(--r) 0 0}
+.stat-top{
+  display:flex;justify-content:space-between;align-items:flex-start;gap:8px;
+  color:var(--muted);font-size:10.5px;text-transform:uppercase;
+  letter-spacing:.7px;font-weight:700;line-height:1.4;
+}
+.stat-icon{
+  width:24px;height:24px;border-radius:5px;display:grid;place-items:center;
+  background:#f1f2f4;color:var(--ink-2);flex-shrink:0;
+}
+.stat-icon svg{width:13px;height:13px}
+.stat strong{
+  display:block;font-family:var(--mono);font-size:29px;font-weight:600;
+  line-height:1.05;letter-spacing:-1.2px;margin:11px 0 3px;
+  font-variant-numeric:tabular-nums;
+}
+.stat small{color:var(--muted);font-size:11.5px;line-height:1.35;display:block}
+
+/* ---------- панели ---------- */
+.panel{
+  background:var(--surface);border:1px solid var(--line);border-radius:var(--r);
+  overflow:hidden;margin-bottom:14px;
+}
+.panel-head{
+  padding:13px 16px;border-bottom:1px solid var(--line);
+  display:flex;align-items:center;justify-content:space-between;gap:12px;
+  background:#fbfcfc;
+}
+.panel-head h2{font-size:13.5px;margin:0;font-weight:700;letter-spacing:-.1px}
+
+.filters{display:flex;gap:7px;flex-wrap:wrap}
+.filters input,.filters select{
+  border:1px solid var(--line-2);border-radius:var(--r-sm);
+  padding:7px 10px;background:var(--surface);font-size:12.5px;
+}
+.filters input{width:210px}
+.filters input::placeholder{color:#9aa1ab}
+
+/* ---------- таблица ---------- */
+.tablewrap{overflow:auto;max-height:min(72vh,760px)}
+table{border-collapse:separate;border-spacing:0;width:100%;min-width:900px}
+th{
+  text-align:left;background:#fafbfc;color:var(--muted);
+  font-size:10.5px;text-transform:uppercase;letter-spacing:.6px;font-weight:700;
+  padding:9px 14px;border-bottom:1px solid var(--line);
+  position:sticky;top:0;z-index:2;white-space:nowrap;
+}
+td{
+  padding:11px 14px;border-top:1px solid #eef0f2;
+  vertical-align:middle;font-size:13px;
+}
+tbody tr:hover td{background:#fafbfc}
+th:first-child,td:first-child{
+  position:sticky;left:0;background:var(--surface);z-index:1;
+  border-right:1px solid var(--line);
+}
+th:first-child{background:#fafbfc;z-index:3}
+tbody tr:hover td:first-child{background:#fafbfc}
+
+.material{font-weight:650;letter-spacing:-.1px}
+.sub{font-size:11.5px;color:var(--muted);margin-top:2px;font-variant-numeric:tabular-nums}
+
+/* ---------- статусы ---------- */
+.pill{
+  display:inline-flex;align-items:center;gap:6px;
+  border-radius:4px;padding:4px 8px;
+  font-size:10.5px;font-weight:700;letter-spacing:.35px;text-transform:uppercase;
+  white-space:nowrap;border:1px solid transparent;
+}
+.pill:before{content:"";width:5px;height:5px;border-radius:1px;background:currentColor;flex-shrink:0}
+.ok{background:rgba(21,128,61,.09);color:var(--ok);border-color:rgba(21,128,61,.22)}
+.warn{background:rgba(180,83,9,.09);color:var(--warn);border-color:rgba(180,83,9,.22)}
+.bad{background:rgba(185,28,28,.08);color:var(--bad);border-color:rgba(185,28,28,.2)}
+.review{background:rgba(29,78,216,.08);color:var(--review);border-color:rgba(29,78,216,.2)}
+.none{background:rgba(107,114,128,.1);color:#4b5563;border-color:rgba(107,114,128,.2)}
+
+.chip{
+  display:inline-block;background:#f1f2f4;color:var(--ink-2);
+  border-radius:4px;padding:3px 7px;font-size:11px;font-weight:600;
+  font-variant-numeric:tabular-nums;
+}
+
+/* ---------- нижний блок обзора ---------- */
+.bottom{display:grid;grid-template-columns:1.35fr .65fr;gap:14px}
+.smallpanel{
+  background:var(--surface);border:1px solid var(--line);
+  border-radius:var(--r);padding:16px;
+}
+.smallpanel h3{font-size:13px;margin:0 0 10px;font-weight:700;letter-spacing:-.1px}
+
+.alert{display:flex;gap:10px;padding:11px 0;border-top:1px solid #eef0f2}
+.alert:first-of-type{border-top:0;padding-top:2px}
+.alert-icon{
+  width:24px;height:24px;display:grid;place-items:center;border-radius:5px;
+  background:rgba(180,83,9,.1);color:var(--warn);flex-shrink:0;margin-top:1px;
+}
+.alert-icon svg{width:13px;height:13px}
+.alert-icon.bad{background:rgba(185,28,28,.09);color:var(--bad)}
+.alert b{font-size:12.5px;font-weight:650;letter-spacing:-.1px}
+.alert p{margin:3px 0 0;color:var(--muted);font-size:11.5px;line-height:1.5}
+.alert p:last-child{margin-top:7px}
+
+.progressrow{
+  display:flex;justify-content:space-between;align-items:baseline;gap:10px;
+  font-size:12px;margin:14px 0 6px;color:var(--ink-2);
+}
+.progressrow:first-of-type{margin-top:2px}
+.progressrow b{font-family:var(--mono);font-variant-numeric:tabular-nums;font-size:12.5px;color:var(--ink)}
+.bar{height:6px;border-radius:3px;background:#eceef1;overflow:hidden}
+.bar i{display:block;height:100%;background:var(--accent-fill);border-radius:3px;transition:width .3s ease}
+
+.rulebox{
+  background:#fafbfc;border:1px solid var(--line);border-left:3px solid var(--line-2);
+  border-radius:var(--r-sm);padding:11px 13px;margin:16px 0 0;
+  font-size:11.5px;line-height:1.55;color:var(--ink-2);
+}
+.rulebox strong{color:var(--ink);font-weight:700}
+
+.footer-note{color:#9aa1ab;font-size:11px;margin-top:18px;line-height:1.5}
+.empty{padding:26px 16px;text-align:center;color:var(--muted);font-size:12.5px}
+
+/* ---------- этапы ---------- */
+.stagegrid{
+  display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));
+  gap:12px;margin-bottom:14px;
+}
+.stagecard{
+  background:var(--surface);border:1px solid var(--line);
+  border-left:3px solid var(--line-2);
+  border-radius:var(--r);padding:15px 16px;
+  transition:border-color .12s;
+}
+.stagecard:hover{border-color:var(--line-2);border-left-color:var(--line-2)}
+.stagecard.ok{border-left-color:var(--ok)}
+.stagecard.warn{border-left-color:var(--accent-fill)}
+.stagecard.bad{border-left-color:var(--bad)}
+.stagecard:hover.ok{border-left-color:var(--ok)}
+.stagecard:hover.warn{border-left-color:var(--accent-fill)}
+.stagecard:hover.bad{border-left-color:var(--bad)}
+.stagecard h3{margin:0 0 3px;font-size:14px;font-weight:650;letter-spacing:-.15px}
+.stagecard .row{display:flex;justify-content:space-between;align-items:center;gap:8px;margin:10px 0;flex-wrap:wrap}
+.stagecard .msg{font-size:12px;color:var(--ink-2);margin:10px 0 0;line-height:1.5}
+
+.matlist{border-top:1px solid #eef0f2;margin-top:12px;padding-top:7px}
+.matitem{
+  display:flex;justify-content:space-between;align-items:center;gap:8px;
+  padding:6px 0;font-size:12.5px;cursor:pointer;width:100%;
+  background:none;border:0;text-align:left;color:var(--ink);
+  transition:color .12s;
+}
+.matitem:hover b{color:var(--accent)}
+.dot{
+  width:7px;height:7px;border-radius:2px;display:inline-block;
+  margin-right:7px;flex-shrink:0;
+}
+.dot.ok{background:var(--ok)}
+.dot.warn{background:var(--accent-fill)}
+.dot.bad{background:var(--bad)}
+.dot.review{background:var(--review)}
+
+.datefield{
+  display:flex;align-items:center;gap:8px;font-size:11.5px;color:var(--muted);
+  margin-top:12px;flex-wrap:wrap;
+}
+.datefield input{
+  border:1px solid var(--line-2);border-radius:var(--r-sm);
+  padding:5px 7px;font-size:11.5px;background:var(--surface);
+}
+.datefield .mini{margin-left:auto}
+
+/* ---------- модальные окна ---------- */
+.modalback{
+  display:none;position:fixed;inset:0;background:rgba(15,19,25,.55);
+  align-items:center;justify-content:center;padding:18px;z-index:10;
+}
+.modalback.show{display:flex;animation:fadeIn .12s ease-out}
+.modal{
+  background:var(--surface);border-radius:10px;
+  width:min(680px,100%);max-height:92vh;overflow:auto;
+  padding:22px;border:1px solid rgba(12,16,22,.08);
+  box-shadow:0 24px 60px rgba(12,16,22,.28);
+}
+.modalback.show .modal{animation:popIn .16s cubic-bezier(.2,.8,.3,1)}
+.modal h2{margin:0 0 4px;font-size:17px;letter-spacing:-.3px}
+.modal>p{color:var(--muted);font-size:12.5px;margin:0 0 16px;line-height:1.5}
+.modal-actions{display:flex;justify-content:flex-end;gap:8px;margin-top:20px;flex-wrap:wrap}
+
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+@keyframes popIn{from{opacity:0;transform:translateY(8px) scale(.99)}to{opacity:1;transform:none}}
+
+/* ---------- формы ---------- */
+.formgrid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.field{display:flex;flex-direction:column;gap:5px}
+.field.full{grid-column:1/-1}
+.field label{font-size:11.5px;color:var(--ink-2);font-weight:650}
+.field input,.field select,.field textarea{
+  padding:9px 10px;border:1px solid var(--line-2);border-radius:var(--r-sm);
+  min-width:0;background:var(--surface);font-size:13px;
+}
+.field input::placeholder,.field textarea::placeholder{color:#a2a9b2}
+
+/* ---------- документы в карточке ---------- */
+.doclist{display:grid;gap:8px;margin:12px 0}
+.docitem{
+  display:flex;align-items:flex-start;gap:10px;
+  padding:11px 12px;border:1px solid var(--line);border-radius:var(--r-sm);
+  background:#fcfcfd;
+}
+.docitem input[type=checkbox]{margin-top:3px;accent-color:var(--accent);flex-shrink:0}
+.docitem b{font-size:12.5px;display:block;font-weight:650;line-height:1.4}
+.docitem small{color:var(--muted);font-size:11px}
+
+.docmain{display:block;min-width:0;flex:1}
+.file-attach{
+  display:inline-flex;align-items:center;gap:6px;
+  color:var(--accent);font-size:11.5px;font-weight:650;cursor:pointer;margin-top:8px;
+}
+.file-attach svg{width:13px;height:13px}
+.file-attach input{position:absolute;width:1px;height:1px;opacity:0;pointer-events:none}
+.file-hint{display:block;color:#9aa1ab;font-size:10.5px;margin-top:4px}
+
+.attachment-list{display:grid;gap:5px;margin-top:8px}
+.attachment-row{
+  display:flex;align-items:center;gap:7px;flex-wrap:wrap;
+  background:var(--surface);border:1px solid var(--line);
+  border-radius:5px;padding:5px 8px;font-size:11.5px;
+}
+.attachment-row svg{width:13px;height:13px;color:var(--muted);flex-shrink:0}
+.attachment-name{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:240px}
+.attachment-actions{display:flex;gap:4px;margin-left:auto}
+.attachment-actions button{font-size:10.5px;padding:3px 6px}
+
+.reqbox{
+  width:100%;min-height:150px;font-size:12.5px;margin-top:8px;
+  border:1px solid var(--line-2);border-radius:var(--r-sm);padding:10px;
+  font-family:inherit;line-height:1.55;background:#fcfcfd;resize:vertical;
+}
+.hint{font-size:11.5px;color:var(--muted);margin-top:12px}
+
+/* ---------- вход ---------- */
+.auth-btn{margin-left:6px}
+.auth-modal{width:min(430px,100%)}
+.auth-error{color:var(--bad);font-size:11.5px;margin-top:8px;min-height:1em}
+.cloud-state{font-size:10.5px;color:var(--muted)}
+
+/* ---------- тост ---------- */
+.toast{
+  position:fixed;right:16px;bottom:16px;z-index:20;
+  background:var(--ink);color:#fff;border-radius:var(--r-sm);
+  border-left:3px solid var(--accent-fill);
+  padding:11px 15px;font-size:12.5px;line-height:1.45;
+  box-shadow:0 10px 28px rgba(12,16,22,.24);
+  display:none;max-width:calc(100vw - 32px);
+}
+.toast.show{display:block;animation:fadeIn .12s ease-out}
+
+.view{display:none}
+.view.active{display:block}
+
+/* ---------- адаптив ---------- */
+@media(max-width:950px){
+  .app{grid-template-columns:1fr}
+  .side{display:none}
+  .tabs{display:flex}
+  .content{padding:18px 14px}
+  .top{padding:0 14px;height:56px}
+  .stats{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .bottom{grid-template-columns:1fr}
+  .heading h1{font-size:20px}
+  .tablewrap{max-height:none}
+  th:first-child,td:first-child{position:static;border-right:0}
+  th{position:static}
+  .toast{left:14px;right:14px;bottom:14px}
+}
+
+@media(max-width:520px){
+  .stats{gap:8px}
+  .stat{padding:12px 13px}
+  .stat strong{font-size:24px;letter-spacing:-.8px}
+  .stat-top{font-size:9.5px;letter-spacing:.5px}
+  .stat small{font-size:10.5px}
+  .heading{flex-direction:column;gap:12px}
+  .heading p{font-size:12.5px}
+  .top-actions{width:100%}
+  .top-actions .btn{flex:1}
+  .filters{width:100%}
+  .filters input{width:100%}
+  .filters select{flex:1}
+  .panel-head{flex-direction:column;align-items:flex-start}
+  .formgrid{grid-template-columns:1fr}
+  .field.full{grid-column:auto}
+  .modal-actions .btn{flex:1}
+  .modal{padding:18px}
+  .stagegrid{grid-template-columns:1fr}
+  .user .sub{display:none}
+  .avatar{display:none}
+}
+
+/* ---------- печать ---------- */
+@media print{
+  @page{size:A4;margin:14mm}
+  .side,.top,.tabs,.top-actions,.toast,.mini,.modalback,.footer-note,.filters{display:none!important}
+  .app{display:block}
+  body{background:#fff;color:#000;font-size:10.5pt}
+  .content{padding:0;max-width:none}
+  .panel,.smallpanel,.stat,.stagecard{
+    border:1px solid #b8b8b8!important;border-radius:0;box-shadow:none!important;
+    break-inside:avoid;page-break-inside:avoid;
+  }
+  .stagecard{border-left-width:3px!important}
+  .tablewrap{max-height:none;overflow:visible}
+  table{min-width:0!important;width:100%}
+  th,td{position:static!important}
+  th{background:#f0f0f0!important;color:#000!important;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .pill{border:1px solid currentColor;background:none!important;-webkit-print-color-adjust:exact}
+  .stat strong{font-size:18pt}
+  .heading h1{font-size:15pt}
+  .heading p{color:#333}
+  .rulebox{background:none;border:1px solid #ccc;border-left-width:3px}
+  .bar{background:#e6e6e6!important;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  tbody tr{break-inside:avoid}
+}
+
+/* ---------- доступность ---------- */
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important;scroll-behavior:auto!important}
+}
+
+</style></head><body><div class="app"><aside class="side"><div class="brand"><div class="logo">СК</div><div><b>СтройКонтроль</b><small>Документы объекта</small></div></div><div class="navlabel">Рабочее пространство</div><nav aria-label="Разделы"><button class="nav active" data-view="overview"><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg></span> Обзор</button><button class="nav" data-view="stages"><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2.8 3 7.4l9 4.6 9-4.6-9-4.6Z"/><path d="m3 12.4 9 4.6 9-4.6"/></svg></span> Этапы работ <em id="navStageBadge" style="display:none"></em></button><button class="nav" data-view="deliveries"><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.5 7.3 12 2.5l8.5 4.8v9.4L12 21.5l-8.5-4.8V7.3Z"/><path d="M3.5 7.3 12 12l8.5-4.7"/><path d="M12 12v9.5"/></svg></span> Поставки и материалы</button><button class="nav" data-view="report"><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 20.2h18"/><path d="M6.5 20.2v-6.6"/><path d="M11.5 20.2V6.4"/><path d="M16.5 20.2v-3.4"/><path d="M21 20.2V9.6"/></svg></span> Отчёт</button></nav></aside>
 <main class="main"><header class="top"><div><div class="crumb" id="crumb">Объект / Мостовое сооружение / Обзор</div></div><div class="user"><div class="avatar">ИП</div><div><b id="userName">Гость</b><div class="sub" id="userSub">Просмотр по ссылке</div></div><button class="mini auth-btn" id="authBtn" type="button">Войти</button></div></header><div class="content">
 <div class="tabs" role="tablist"><button class="tab active" data-view="overview">Обзор</button><button class="tab" data-view="stages">Этапы работ</button><button class="tab" data-view="deliveries">Поставки</button><button class="tab" data-view="report">Отчёт</button></div>
 
 <!-- ОБЗОР -->
-<div class="view active" id="view-overview"><div class="heading"><div><h1>Обзор документации</h1><p>Готовность паспортов и документов по поставкам относительно графика этапов работ</p></div><div class="top-actions"><button class="btn secondary" data-reset>Сбросить пример</button><button class="btn primary" data-add>＋ Добавить поставку</button></div></div>
-<div class="stats"><button class="stat" data-stat="all"><div class="stat-top">Всего поставок <span class="stat-icon">▤</span></div><strong id="total">—</strong><small>Открыть весь реестр</small></button><button class="stat" data-stat="ok"><div class="stat-top">Комплект готов <span class="stat-icon">✓</span></div><strong id="ready">—</strong><small>Все документы получены и проверены</small></button><button class="stat" data-stat="bad"><div class="stat-top">Есть несоответствия <span class="stat-icon">!</span></div><strong id="issues">—</strong><small>Нужна сверка партии</small></button><button class="stat" data-stat="warn"><div class="stat-top">Не хватает документов <span class="stat-icon">◷</span></div><strong id="missing">—</strong><small>Комплект ещё не собран</small></button></div>
-<div class="panel"><div class="panel-head"><h2>Ближайшие этапы работ</h2><button class="mini" data-goto="stages">Все этапы →</button></div><div style="padding:16px"><div class="stagegrid" id="stageStrip" style="margin:0"></div></div></div>
-<div class="bottom"><section class="smallpanel"><h3>Требуют внимания (по срочности этапа)</h3><div id="alerts"></div></section><section class="smallpanel"><h3>Готовность документации</h3><div class="progressrow"><span>Полностью проверенные комплекты</span><b id="percent">0%</b></div><div class="bar"><i id="progress" style="width:0%"></i></div><div class="progressrow"><span>Поставки с проблемами</span><b id="issuePercent">0%</b></div><div class="bar"><i id="issueProgress" style="width:0%;background:#d88a24"></i></div><div class="progressrow"><span>Этапы с допуском к работам</span><b id="stagePercent">0%</b></div><div class="bar"><i id="stageProgress" style="width:0%;background:#17845b"></i></div><div class="rulebox"><strong>Как работает проверка</strong><br>Статус поставки считается по обязательным документам, отметкам о проверке и сверке партии. Допуск этапа — по статусам всех привязанных поставок и времени до начала работ. Это вспомогательный контроль, а не юридическое заключение.</div></section></div></div>
+<div class="view active" id="view-overview"><div class="heading"><div><h1>Обзор документации</h1><p>Готовность паспортов и документов по поставкам относительно графика этапов работ</p></div><div class="top-actions"><button class="btn secondary" data-reset>Сбросить пример</button><button class="btn primary" data-add><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg> Добавить поставку</button></div></div>
+<div class="stats"><button class="stat" data-stat="all"><div class="stat-top">Всего поставок <span class="stat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.5 7.3 12 2.5l8.5 4.8v9.4L12 21.5l-8.5-4.8V7.3Z"/><path d="M3.5 7.3 12 12l8.5-4.7"/><path d="M12 12v9.5"/></svg></span></div><strong id="total">—</strong><small>Открыть весь реестр</small></button><button class="stat" data-stat="ok"><div class="stat-top">Комплект готов <span class="stat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6.5 9.5 17 4 11.5"/></svg></span></div><strong id="ready">—</strong><small>Все документы получены и проверены</small></button><button class="stat" data-stat="bad"><div class="stat-top">Есть несоответствия <span class="stat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10.3 3.9 1.9 18a2 2 0 0 0 1.7 3h16.8a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0Z"/><path d="M12 9v4.4"/><path d="M12 17.1h.01"/></svg></span></div><strong id="issues">—</strong><small>Нужна сверка партии</small></button><button class="stat" data-stat="warn"><div class="stat-top">Не хватает документов <span class="stat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.4V12l3.1 2"/></svg></span></div><strong id="missing">—</strong><small>Комплект ещё не собран</small></button></div>
+<div class="panel"><div class="panel-head"><h2>Ближайшие этапы работ</h2><button class="mini" data-goto="stages">Все этапы <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h13.5"/><path d="m12.6 5.6 6.4 6.4-6.4 6.4"/></svg></button></div><div style="padding:16px"><div class="stagegrid" id="stageStrip" style="margin:0"></div></div></div>
+<div class="bottom"><section class="smallpanel"><h3>Требуют внимания (по срочности этапа)</h3><div id="alerts"></div></section><section class="smallpanel"><h3>Готовность документации</h3><div class="progressrow"><span>Полностью проверенные комплекты</span><b id="percent">0%</b></div><div class="bar"><i id="progress" style="width:0%"></i></div><div class="progressrow"><span>Поставки с проблемами</span><b id="issuePercent">0%</b></div><div class="bar"><i id="issueProgress" style="width:0%;background:var(--warn)"></i></div><div class="progressrow"><span>Этапы с допуском к работам</span><b id="stagePercent">0%</b></div><div class="bar"><i id="stageProgress" style="width:0%;background:var(--ok)"></i></div><div class="rulebox"><strong>Как работает проверка</strong><br>Статус поставки считается по обязательным документам, отметкам о проверке и сверке партии. Допуск этапа — по статусам всех привязанных поставок и времени до начала работ. Это вспомогательный контроль, а не юридическое заключение.</div></section></div></div>
 
 <!-- ЭТАПЫ -->
-<div class="view" id="view-stages"><div class="heading"><div><h1>Этапы работ</h1><p>К каждому этапу привязаны материалы. Пока комплект документов не закрыт, этап не допускается к началу работ. Когда комплект закрыт — можно готовить исполнительную документацию.</p></div><div class="top-actions"><button class="btn secondary" data-add-stage>＋ Добавить этап</button><button class="btn primary" data-add>＋ Добавить поставку</button></div></div><div class="stagegrid" id="stageList"></div></div>
+<div class="view" id="view-stages"><div class="heading"><div><h1>Этапы работ</h1><p>К каждому этапу привязаны материалы. Пока комплект документов не закрыт, этап не допускается к началу работ. Когда комплект закрыт — можно готовить исполнительную документацию.</p></div><div class="top-actions"><button class="btn secondary" data-add-stage><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg> Добавить этап</button><button class="btn primary" data-add><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg> Добавить поставку</button></div></div><div class="stagegrid" id="stageList"></div></div>
 
 <!-- ПОСТАВКИ -->
-<div class="view" id="view-deliveries"><div class="heading"><div><h1>Поставки и материалы</h1><p>Реестр поставок с привязкой к этапам работ и ответственным</p></div><div class="top-actions"><button class="btn primary" data-add>＋ Добавить поставку</button></div></div>
+<div class="view" id="view-deliveries"><div class="heading"><div><h1>Поставки и материалы</h1><p>Реестр поставок с привязкой к этапам работ и ответственным</p></div><div class="top-actions"><button class="btn primary" data-add><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg> Добавить поставку</button></div></div>
 <section class="panel"><div class="panel-head"><h2>Реестр</h2><div class="filters"><input id="search" type="search" placeholder="Поиск материала, партии…" aria-label="Поиск"><select id="stageFilter" aria-label="Фильтр по этапу"></select><select id="statusFilter" aria-label="Фильтр по статусу"><option value="all">Все статусы</option><option value="ok">Комплект готов</option><option value="warn">Не хватает документов</option><option value="bad">Есть несоответствие</option><option value="review">На проверке</option></select></div></div><div class="tablewrap"><table><thead><tr><th>Материал / партия</th><th>Этап работ</th><th>Поставщик</th><th>Дата</th><th>Ответственный</th><th>Документы</th><th>Статус</th><th>Действие</th></tr></thead><tbody id="rows"></tbody></table></div></section></div>
 
 <!-- ОТЧЁТ -->
@@ -103,7 +590,8 @@ function persist(){try{localStorage.setItem(KEY,JSON.stringify(db))}catch(e){toa
 function sessionToken(){return sbSession&&sbSession.access_token}
 function sbHeaders(){const h={apikey:SUPABASE_KEY,Authorization:'Bearer '+(sessionToken()||SUPABASE_KEY)};return h}
 async function sbRequest(path,options={}){const headers={...sbHeaders(),...(options.headers||{})};if(options.body&&typeof options.body!=='string'){headers['Content-Type']='application/json';options={...options,body:JSON.stringify(options.body)}}const res=await fetch(SUPABASE_URL+path,{...options,headers});if(!res.ok){let msg='Supabase error '+res.status;try{const x=await res.json();msg=x.message||x.error_description||msg}catch(e){}throw new Error(msg)}return res.status===204?null:res.json()}
-function setAuthUi(){const logged=!!sessionToken();$('authBtn').textContent=logged?'Выйти':'Войти';$('userName').textContent=logged?(sbSession.user?.email||'Пользователь'):'Гость';$('userSub').textContent=logged?'Редактор · данные синхронизируются':'Просмотр по ссылке';document.querySelectorAll('[data-add],[data-add-stage],[data-reset]').forEach(b=>b.title=logged?'':'Войдите, чтобы изменять данные')}
+function setAvatar(){var a=document.querySelector('.avatar');if(!a)return;if(sessionToken()){var e=((sbSession&&sbSession.user&&sbSession.user.email)||'ID');a.textContent=e.slice(0,2).toUpperCase()}else{a.textContent=String.fromCharCode(1043)}}
+function setAuthUi(){setAvatar();const logged=!!sessionToken();$('authBtn').textContent=logged?'Выйти':'Войти';$('userName').textContent=logged?(sbSession.user?.email||'Пользователь'):'Гость';$('userSub').textContent=logged?'Редактор · данные синхронизируются':'Просмотр по ссылке';document.querySelectorAll('[data-add],[data-add-stage],[data-reset]').forEach(b=>b.title=logged?'':'Войдите, чтобы изменять данные')}
 function requireEditor(){if(sessionToken())return true;toast('Для изменения данных нужно войти в аккаунт.');openModal('authModal','authEmail');return false}
 async function cloudPush(){if(!sessionToken())return;await sbRequest('/rest/v1/project_data?on_conflict=id',{method:'POST',headers:{Prefer:'resolution=merge-duplicates,return=minimal'},body:{id:1,data:db,updated_at:new Date().toISOString()}});cloudReady=true}
 async function cloudPull(){const rows=await sbRequest('/rest/v1/project_data?id=eq.1&select=data');if(rows&&rows[0]&&rows[0].data){db=rows[0].data;db.stages=Array.isArray(db.stages)?db.stages:[];db.items=Array.isArray(db.items)?db.items:[];db.items.forEach(d=>d.attachments=d.attachments||[]);persist();return true}if(sessionToken()){await cloudPush();return true}return false}
@@ -118,7 +606,7 @@ function attachmentGet(id){return attachmentDb().then(dbx=>new Promise((resolve,
 function attachmentDelete(id){return attachmentDb().then(dbx=>new Promise((resolve,reject)=>{const tx=dbx.transaction('files','readwrite');tx.objectStore('files').delete(id);tx.oncomplete=()=>{dbx.close();resolve()};tx.onerror=()=>{dbx.close();reject(tx.error||new Error('Не удалось удалить файл'))}}))}
 function formatBytes(n){if(n<1024)return n+' Б';if(n<1048576)return (n/1024).toFixed(1)+' КБ';if(n<1073741824)return (n/1048576).toFixed(1)+' МБ';return (n/1073741824).toFixed(1)+' ГБ'}
 function attachmentMeta(d,i){return (d.attachments||[]).filter(a=>a.docIndex===i)}
-function renderAttachments(d,i){const box=$('detailBody').querySelector(`[data-attachments="${i}"]`);if(!box)return;const list=attachmentMeta(d,i);box.innerHTML=list.length?list.map(a=>`<div class="attachment-row"><span aria-hidden="true">📎</span><span class="attachment-name" title="${esc(a.name)}">${esc(a.name)}</span><small class="sub">${formatBytes(a.size)}</small><span class="attachment-actions"><button type="button" class="mini" data-open-attachment="${esc(a.id)}">Открыть</button><button type="button" class="mini dng" data-delete-attachment="${esc(a.id)}">Удалить</button></span></div>`).join(''):'<span class="file-hint">Файлы ещё не прикреплены</span>'}
+function renderAttachments(d,i){const box=$('detailBody').querySelector(`[data-attachments="${i}"]`);if(!box)return;const list=attachmentMeta(d,i);box.innerHTML=list.length?list.map(a=>`<div class="attachment-row"><span aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m20.6 11.4-8.6 8.6a5.5 5.5 0 0 1-7.8-7.8l8.6-8.6a3.7 3.7 0 0 1 5.2 5.2l-8.6 8.6a1.8 1.8 0 0 1-2.6-2.6l8-8"/></svg></span><span class="attachment-name" title="${esc(a.name)}">${esc(a.name)}</span><small class="sub">${formatBytes(a.size)}</small><span class="attachment-actions"><button type="button" class="mini" data-open-attachment="${esc(a.id)}">Открыть</button><button type="button" class="mini dng" data-delete-attachment="${esc(a.id)}">Удалить</button></span></div>`).join(''):'<span class="file-hint">Файлы ещё не прикреплены</span>'}
 async function handleFileSelection(input,i,d){const files=[...input.files||[]];if(!files.length)return;if(!requireEditor()){input.value='';return}input.value='';try{for(const file of files){const id=crypto.randomUUID?crypto.randomUUID():'f'+Date.now().toString(36)+Math.random().toString(36).slice(2);let safeName='';await attachmentPut({id,batch:d.batch,docIndex:i,name:file.name,type:file.type,size:file.size,addedAt:Date.now(),blob:file});let publicUrl='';if(sessionToken()){safeName=file.name.replace(/[^a-zA-Z0-9._-]/g,'_');const objectPath=d.batch+'/'+id+'-'+safeName;const upload=await fetch(SUPABASE_URL+'/storage/v1/object/passport-files/'+objectPath.split('/').map(encodeURIComponent).join('/'),{method:'POST',headers:{...sbHeaders(),'Content-Type':file.type||'application/octet-stream','x-upsert':'true'},body:file});if(!upload.ok)throw new Error('Не удалось загрузить файл в облако');publicUrl=SUPABASE_URL+'/storage/v1/object/public/passport-files/'+objectPath.split('/').map(encodeURIComponent).join('/')}d.attachments=d.attachments||[];d.attachments.push({id,docIndex:i,name:file.name,type:file.type,size:file.size,addedAt:Date.now(),url:publicUrl,path:publicUrl?d.batch+'/'+id+'-'+safeName:''})}d.docs[i]=true;persist();if(sessionToken())cloudPush().catch(e=>toast('Файл сохранён локально, но не синхронизирован.'));const doc=$('detailBody').querySelector(`input[data-doc="${i}"]`);if(doc){doc.checked=true;const chk=$('detailBody').querySelector(`input[data-checked="${i}"]`);if(chk)chk.disabled=false;doc.closest('.docitem').querySelector('small').textContent=chk&&chk.checked?'Получен · проверен':'Получен · ожидает проверки'}renderAttachments(d,i);render();toast(files.length===1?'Файл прикреплён к документу.':'Файлы прикреплены к документу.')}catch(e){toast('Не удалось сохранить файл в хранилище браузера.')}}
 async function openAttachment(id){try{const item=db.items.flatMap(x=>x.attachments||[]).find(a=>a.id===id);if(item&&item.url){window.open(item.url,'_blank');return}const record=await attachmentGet(id);if(!record){toast('Файл не найден.');return}const url=URL.createObjectURL(record.blob);const win=window.open(url,'_blank');if(!win){const a=document.createElement('a');a.href=url;a.download=record.name;document.body.appendChild(a);a.click();a.remove()}setTimeout(()=>URL.revokeObjectURL(url),60000)}catch(e){toast('Не удалось открыть файл.')}}
 async function removeAttachment(id){const d=db.items.find(x=>(x.attachments||[]).some(a=>a.id===id));if(!d)return;try{await attachmentDelete(id);d.attachments=d.attachments.filter(a=>a.id!==id);persist();for(let n=0;n<docsFor(d).length;n++)renderAttachments(d,n);toast('Файл удалён.')}catch(e){toast('Не удалось удалить файл.')}}
@@ -148,7 +636,7 @@ function stageCard(info,full){
  const {st,items,gate,label,text,done,d}=info;const pct=items.length?Math.round(done/items.length*100):0;
  return `<div class="stagecard ${gate}"><h3>${esc(st.name)}</h3><div class="sub">${esc(st.work||'')}</div>
  <div class="row"><span class="chip">Старт: ${fmt(st.start)} · ${dayText(d)}</span><span class="pill ${gate}">${label}</span></div>
- <div class="bar" aria-hidden="true"><i style="width:${pct}%;background:${gate==='ok'?'#17845b':gate==='bad'?'#bd3946':'#d88a24'}"></i></div>
+ <div class="bar" aria-hidden="true"><i style="width:${pct}%;background:var(${gate==='ok'?'--ok':gate==='bad'?'--bad':'--warn'})"></i></div>
  <div class="msg">${esc(text)}</div>
  ${full?`<div class="matlist">${items.length?items.map(m=>`<button class="matitem" data-open-batch="${esc(m.batch)}"><span><i class="dot ${statusOf(m)}"></i><b>${esc(m.material)}</b> <span class="sub">· ${esc(m.batch)}</span></span><span class="sub">${esc(labels[statusOf(m)])}</span></button>`).join(''):'<div class="sub">Нет привязанных поставок</div>'}</div>
  <div class="datefield"><label>Начало работ: <input type="date" value="${esc(st.start)}" data-stage-date="${esc(st.id)}"></label>${items.length?'':`<button class="mini dng" data-del-stage="${esc(st.id)}">Удалить этап</button>`}</div>`:''}</div>`;
@@ -170,7 +658,7 @@ function render(){
  $('stageStrip').innerHTML=upcoming.map(i=>stageCard(i,false)).join('')||'<div class="empty" style="grid-column:1/-1">Нет предстоящих этапов</div>';
  $('stageList').innerHTML=infos.map(i=>stageCard(i,true)).join('')||'<div class="empty" style="grid-column:1/-1">Этапов пока нет. Добавь первый этап кнопкой выше.</div>';
  const attention=enriched.filter(d=>d.status!=='ok').map(d=>{const st=stageOf(d);const dd=st?daysTo(st.start):999;return {d,st,dd}}).sort((a,b)=>a.dd-b.dd).slice(0,6);
- $('alerts').innerHTML=attention.length?attention.map(({d,st,dd})=>`<div class="alert"><div class="alert-icon ${dd<=3?'bad':''}">!</div><div><b>${esc(d.material)} · ${esc(d.batch)}</b><p>${st?'Этап «'+esc(st.name)+'» — '+dayText(dd)+'. ':''}${esc(noteFor(d))}</p><p><button class="mini" data-open-batch="${esc(d.batch)}">Открыть проверку</button></p></div></div>`).join(''):'<div class="empty">Нет проблемных поставок.</div>';
+ $('alerts').innerHTML=attention.length?attention.map(({d,st,dd})=>`<div class="alert"><div class="alert-icon ${dd<=3?'bad':''}"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10.3 3.9 1.9 18a2 2 0 0 0 1.7 3h16.8a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0Z"/><path d="M12 9v4.4"/><path d="M12 17.1h.01"/></svg></div><div><b>${esc(d.material)} · ${esc(d.batch)}</b><p>${st?'Этап «'+esc(st.name)+'» — '+dayText(dd)+'. ':''}${esc(noteFor(d))}</p><p><button class="mini" data-open-batch="${esc(d.batch)}">Открыть проверку</button></p></div></div>`).join(''):'<div class="empty">Нет проблемных поставок.</div>';
  const stf=$('stageFilter');const keep=stf.value||'all';
  stf.innerHTML='<option value="all">Все этапы</option>'+sortedStages().map(s=>`<option value="${esc(s.id)}">${esc(s.name)}</option>`).join('');stf.value=db.stages.some(s=>s.id===keep)?keep:'all';
  const q=$('search').value.trim().toLowerCase(),f=$('statusFilter').value,sf=stf.value;
@@ -209,7 +697,7 @@ function openDetails(batch){
  $('detailSubtitle').textContent=d.supplier+' · Поставка: '+fmt(d.date);
  $('detailBody').innerHTML=`<div class="rulebox"><strong>Автоматический статус: ${labels[statusOf(d)]}</strong><br>${esc(noteFor(d))}${st?`<br><span class="sub">Этап «${esc(st.name)}»: ${dayText(daysTo(st.start))}</span>`:''}</div>
  <div class="formgrid" style="margin:12px 0"><div class="field"><label for="dStage">Этап работ</label><select id="dStage">${sortedStages().map(s=>`<option value="${esc(s.id)}" ${s.id===d.stage?'selected':''}>${esc(s.name)}</option>`).join('')}</select></div><div class="field"><label for="dOwner">Ответственный</label><select id="dOwner">${['Снабжение','ПТО','Лаборатория','Прораб'].map(o=>`<option ${o===d.owner?'selected':''}>${o}</option>`).join('')}</select></div></div>
- <h3 style="font-size:14px;margin:16px 0 8px">Обязательные документы</h3><div class="doclist">${docs.map((name,i)=>`<div class="docitem"><input type="checkbox" data-doc="${i}" ${d.docs[i]?'checked':''}><span class="docmain"><b>${esc(name)}</b><small>${docStateText(d,i)}</small><br><span style="font-size:12px"><input type="checkbox" data-checked="${i}" ${d.checked[i]?'checked':''} ${d.docs[i]?'':'disabled'}> Документ проверен</span><label class="file-attach"><input type="file" data-file-doc="${i}" multiple>＋ Прикрепить файл</label><span class="file-hint">Можно выбрать несколько файлов</span><div class="attachment-list" data-attachments="${i}"></div></span></div>`).join('')}</div>
+ <h3 style="font-size:14px;margin:16px 0 8px">Обязательные документы</h3><div class="doclist">${docs.map((name,i)=>`<div class="docitem"><input type="checkbox" data-doc="${i}" ${d.docs[i]?'checked':''}><span class="docmain"><b>${esc(name)}</b><small>${docStateText(d,i)}</small><br><span style="font-size:12px"><input type="checkbox" data-checked="${i}" ${d.checked[i]?'checked':''} ${d.docs[i]?'':'disabled'}> Документ проверен</span><label class="file-attach"><input type="file" data-file-doc="${i}" multiple><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg> Прикрепить файл</label><span class="file-hint">Можно выбрать несколько файлов</span><div class="attachment-list" data-attachments="${i}"></div></span></div>`).join('')}</div>
  <div class="rulebox"><label style="display:flex;gap:9px;align-items:flex-start"><input type="checkbox" id="batchMatch" ${d.batchMatch?'checked':''} style="margin-top:4px;accent-color:var(--purple)"><span><strong>Номер партии и маркировка совпадают</strong><br><small>Сверено с накладной и данными поставки.</small></span></label></div>
  <div class="field"><label for="note">Комментарий инженера (необязательно)</label><input id="note" value="${esc(d.note||'')}" placeholder="Например, запросили исправленный документ"></div>`;
  const body=$('detailBody');
